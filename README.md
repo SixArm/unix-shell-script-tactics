@@ -1,4 +1,4 @@
-# Shell Style Guide
+# SixArm.com » <br> Shell Style Guide
 
 General advice:
 
@@ -43,7 +43,7 @@ For scripts that provide help, please create a help function:
 
 ### Help metadata
 
-Help metadata that we like to use in the help function or a comment:
+For help metadata, please include this information:
 
     Version: 1.0.0
     Created: 2016-01-14
