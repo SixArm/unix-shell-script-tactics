@@ -67,8 +67,25 @@ Source:
     out () { printf %s\\n "$*" ; }
     err () { >&2 printf %s\\n "$*" ; }
     log () { printf '%s %s %s\n' $( now ) $$ "$*" ; }
-    now () { date -u "+%Y-%m-%dT%H:%M:%S,%NZ" ; }
+    now () { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }
     zid () { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random }
+
+
+### Dates & Times
+
+We use ISO standard formats.
+
+Examples:
+
+  * Time: 12:59:59
+  * Time with nanoseconds: 12:59:59.123456789 (for the decimal point, we use a period, not a comma)
+  * Date: 2016-12-31
+  * Date with weekly format: 2016-W52-7
+  * Timestamping: 2016-12-31T12:59:59Z (we use formatting and Zulu time)
+
+Notes:
+
+  * For the time nanoseconds decimal, we use a period not a comma, because a period looks more like a decimal, and is also easier to use in comma separated values (CSV) files.
 
 
 ### Sample script
