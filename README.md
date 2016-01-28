@@ -5,6 +5,7 @@ General advice:
   * [Writing safe shell scripts](https://sipb.mit.edu/doc/safe-shell/)
   * [Rich’s sh (POSIX shell) tricks](http://www.etalabs.net/sh_tricks.html)
   * [Google Shell Script Style Guide](https://google.github.io/styleguide/shell.xml])
+  * [Filenames and Pathnames in Shell: How to do it Correctly](http://www.dwheeler.com/essays/filenames-in-shell.html)
 
 Our advice:
 
