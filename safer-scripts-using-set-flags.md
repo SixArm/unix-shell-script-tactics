@@ -1,0 +1,20 @@
+# Safer scripts using set flags
+
+For Bash help on the `set` command see: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+
+For POSIX scripts, please start with:
+
+    set -euf
+
+For bash/zsh scripts, please start with:
+
+    set -euf -o pipefail
+
+Meanings:
+
+  * `set -e` or `set -o errexit`: if there is an error, then exit immediately.
+  * `set -u` or `set -o nounset`: disallow unset variables.
+  * `set -f` or `set -o noglob`: diasble filename globbing.
+  * `set -o pipefail`: if a pipe fails, then exit immediately and use the pipe's exit status.
+
+Note: some scripts won't be able use all these flags. For example, a script that needs filename globbing cannot use `set -f` because it disables globbing. Please note this in the code immediately above the `set` line.
