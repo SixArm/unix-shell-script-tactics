@@ -1,4 +1,4 @@
-# Temporary files using `mktemp` and `trap`
+# Temporary file using `mktemp` and `trap`
 
 To create a temporary file:
 

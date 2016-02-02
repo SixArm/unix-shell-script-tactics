@@ -21,22 +21,28 @@ Summary:
   * Use `trap "..." EXIT` instead of TERM, INT, HUP, etc.
   * Store conf files in a configuration directory `${XDG_CONFIG_HOME:-$HOME/.config}`
 
-Specifics:
+Highest priority:
 
   * [Safer scripts using `set` flags](safer-scripts-using-set-flags.md)
-  * [Program name using a string or basename](program-name-using-a-string-name-or-basename.md)
-  * [Configuration directory using XDG_CONFIG_HOME](configuration-directory-using-xdg-config-home.md)
-  * [Help metadata: version, created, updated, license, contact](help-metadata-version-created-updated-license-contact.md)
-  * [All-purpose functions: out, err, log, now, zid](all-purpose-functions-out-err-log-now-zid.md)
-  * [Temporary directory using `mktemp` and `program`](temporary-directory-using-mktemp-and-program.md)
+  * [Program name using a string or basename](program-name-using-a-string-or-basename.md)
+  * [Version name using semantic versioning](version-name-using-semantic-versioning.md)
+  * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
   * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
+  * [All-purpose functions: out, err, log, now, zid](all-purpose-functions-out-err-log-now-zid.md)
+
+Directories and files:
+
+  * [Configuration directory using XDG_CONFIG_HOME](configuration-directory-using-xdg-config-home.md)
+  * [Temporary directory using `mktemp` and `program`](temporary-directory-using-mktemp-and-program.md)
+  * [Temporary file using `mktemp` and `trap`](temporary-file-using-mktemp-and-trap.md)
+  * [Find files with special characters](find-files-with-special-characters.md)
+
+Control flow statements:
+
+  * [While loop with index counter](while-loop-with-index-counter.md)
   * [Do while loop](do-while-loop.md)
   * [Case statement that skips option dash flags](case-statement-that-skips-option-dash-flags.md)
   * [Subshell syntax using parentheses not backticks](subshell-syntax-using-parentheses-not-backticks.md)
-  * [Temporary files using `mktemp` and `trap`](temporary-files-using-mktemp-and-trap.md)
-  * [Find files with special characters](find-files-with-special-characters.md)
-  * [While loop with index counter](while-loop-with-index-counter.md)
-
 
 
 ### Sample script
@@ -48,7 +54,7 @@ This sample script shows many of our style guide conventions that we tend to use
     help(){
     cat << EOF
 
-    Foo: this script does foo stuff.
+    Foo Goo: this script does foo stuff.
 
     Program: your-program-name-here
     Version: 1.0.0
@@ -65,8 +71,8 @@ This sample script shows many of our style guide conventions that we tend to use
     now() { date -u "+%Y-%m-%dT%H:%M:%S,%NZ" ; }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random }
 
-    program() { echo "foo"; }
-    version() { echo "1.1.0"; }
+    program() { echo "foo-goo"; }
+    version() { echo "1.2.3"; }
     confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }
     tempdir() { echo $(mktemp -d -t $program); }
 
@@ -90,4 +96,4 @@ This sample script shows many of our style guide conventions that we tend to use
       esac
     fi
 
-    # Main source code starts here
+    # The program's main source code starts here

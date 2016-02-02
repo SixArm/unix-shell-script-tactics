@@ -1,4 +1,4 @@
-# Program function using a string name or basename
+# Program name using a string name or basename
 
 We prefer a program to be able to return its own name.
 
