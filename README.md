@@ -6,6 +6,7 @@ General advice:
   * [Rich’s sh (POSIX shell) tricks](http://www.etalabs.net/sh_tricks.html)
   * [Google Shell Script Style Guide](https://google.github.io/styleguide/shell.xml])
   * [Filenames and Pathnames in Shell: How to do it Correctly](http://www.dwheeler.com/essays/filenames-in-shell.html)
+  * [Standard Command-Line Options](http://www.tldp.org/LDP/abs/html/standard-options.html)
 
 Summary:
 
@@ -13,13 +14,15 @@ Summary:
   * Set shell script flags to protect the script such as `set -euf`.
   * Quote liberally such as `"$var"` instead of just `$var`, for safety.
   * Bulletproof to handle characters such as a quote, newline, leading dash.
-  * Format dates and times using UTC and using ISO8601 standards.
   * Executables should have no extension (strongly preferred).
   * Use `printf` instead of `echo` because of security and stability.
-  * Use `$()` instead of backticks for subshell commands.
-  * Use `mktemp` instead of `tempfile`, and instead of ad hoc $$, RANDOM, etc.
-  * Use `trap "..." EXIT` instead of TERM, INT, HUP, etc.
-  * Store conf files in a configuration directory `${XDG_CONFIG_HOME:-$HOME/.config}`
+  * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
+  * To format dates and times: use UTC and using ISO8601 standards.
+  * To run a subshell command: use `$()` instead of backticks.
+  * To create temporary files: use `mktemp` instead of `tempfile` et. al.
+  * To trap: use `trap "..." EXIT` instead of TERM, INT, HUP, etc.
+  * To parse options: use `while` and `case` instead of `getopts` or `getopt`.
+  * To access a user's configuration directory: `${XDG_CONFIG_HOME:-$HOME/.config}`
 
 Highest priority:
 
