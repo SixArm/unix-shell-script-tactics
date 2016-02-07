@@ -31,7 +31,7 @@ Highest priority:
   * [Version name using semantic versioning](version-name-using-semantic-versioning.md)
   * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
   * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
-  * [All-purpose functions: out, err, log, now, zid](all-purpose-functions-out-err-log-now-zid.md)
+  * [All-purpose functions: out, err, die, log, now, zid](all-purpose-functions-out-err-die-log-now-zid.md)
 
 Directories and files:
 
