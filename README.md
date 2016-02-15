@@ -30,6 +30,7 @@ Highest priority:
   * [Program name using a string or basename](program-name-using-a-string-or-basename.md)
   * [Version name using semantic versioning](version-name-using-semantic-versioning.md)
   * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
+  * [Booleans using true and false](booleans-using-true-and-false.md)
   * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
   * [All-purpose functions: out, err, die, log, now, zid](all-purpose-functions-out-err-die-log-now-zid.md)
 
