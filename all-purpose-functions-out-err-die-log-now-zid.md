@@ -16,4 +16,4 @@ Code:
     die () { >&2 printf %s\\n "$*" ; exit 1 ; }
     log () { printf '%s %s %s\n' $( now ) $$ "$*" ; }
     now () { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }
-    zid () { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random }
+    zid () { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
