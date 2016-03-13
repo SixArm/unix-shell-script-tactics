@@ -71,11 +71,13 @@ This sample script shows many of our style guide conventions that we tend to use
 
     out() { printf %s\\n "$*" ; }
     err() { >&2 printf %s\\n "$*" ; }
-    die() { >&2 printf %s\\n "$*" ; exit 1 ; }
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }
     now() { date -u "+%Y-%m-%dT%H:%M:%S,%NZ" ; }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
-
+    die () { >&2 printf %s\\n "$*" ; exit 1 ; }
+	die_opt_unk() { die "Option $1 is unknown" ; }
+	die_opt_arg() { die "Option $1 needs an argument" ; }
+	
     program() { echo "foo-goo"; }
     version() { echo "1.2.3"; }
     confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }
