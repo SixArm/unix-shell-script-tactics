@@ -55,10 +55,23 @@ This sample script shows many of our style guide conventions that we tend to use
 
     #/bin/sh
     set -euf
+	
+	## Program Tracking ##
+
+    program_command="foo-goo-hoo"
+    program_version="1.0.0"
+    program_created="2015-01-01"
+    program_updated="2016-01-11"
+    program_license="GPL"
+    program_contact="Alice Adams (alice@example.com)"
+    program_variant="$program_command version $program_version updated $program_updated"
+
+    ## Help Function ##
+
     help(){
     cat << EOF
 
-    Foo Goo: this script does foo stuff.
+    Foo Goo Hoo: this script does some amazing things.
 
     Program: your-program-name-here
     Version: 1.0.0
