@@ -14,10 +14,17 @@ Find items in the current directory that start with a space or end with a space:
 
     find . -type d \( -regex '\./ .*' -o -regex '.* ' \) -exec echo "==={}===" \;
 
-
 Find and switch to each file's directory then execute a command from there:
 
     find . -name '*.txt' -execdir /mycmd {} \;
+
+Find using portable semicolon and portable null termination:
+
+    find . -exec printf %s\\0 '{}' \;
+
+Find using portable semicolon and portable null termination, then a while loop:
+
+    find . -exec printf %s\\0 '{}' \; | while read -d $'\0' file; do ...
 
 Find items and run a shell script on each item. This works portably.  Use '\'' for single-quote in command. This runs a subshell, so variable values are lost after each iteration.
 
