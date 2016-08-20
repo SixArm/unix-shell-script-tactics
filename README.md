@@ -40,6 +40,7 @@ Directories and files:
   * [Temporary directory using `mktemp` and `program`](temporary-directory-using-mktemp-and-program.md)
   * [Temporary file using `mktemp` and `trap`](temporary-file-using-mktemp-and-trap.md)
   * [Find files with special characters](find-files-with-special-characters.md)
+  * [Find files with readable permissions](find-files-with-readable-permissions.md)
 
 Control flow statements:
 
