@@ -32,7 +32,7 @@ Highest priority:
   * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
   * [Booleans using true and false](booleans-using-true-and-false.md)
   * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
-  * [All-purpose functions: out, err, die, log, now, zid](all-purpose-functions-out-err-die-log-now-zid.md)
+  * [All-purpose functions: out, err, die, log, now, zid](all-purpose-functions-out-err-die-log-now-zid-cmd.md)
 
 Directories and files:
 
@@ -57,7 +57,7 @@ This sample script shows many of our style guide conventions that we tend to use
     #/bin/sh
     set -euf
 	
-	## Program Tracking ##
+    ## Program Tracking ##
 
     program_command="foo-goo-hoo"
     program_version="1.0.0"
@@ -85,12 +85,15 @@ This sample script shows many of our style guide conventions that we tend to use
 
     out() { printf %s\\n "$*" ; }
     err() { >&2 printf %s\\n "$*" ; }
+    die() { >&2 printf %s\\n "$*" ; exit 1 ; }
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }
     now() { date -u "+%Y-%m-%dT%H:%M:%S,%NZ" ; }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
-    die () { >&2 printf %s\\n "$*" ; exit 1 ; }
-	die_opt_unk() { die "Option $1 is unknown" ; }
-	die_opt_arg() { die "Option $1 needs an argument" ; }
+    cmd() { command -v $1 >/dev/null 2>&1 }
+
+    die_cmd_unk() { die "Command $1 is unknown" ; }
+    die_opt_unk() { die "Option $1 is unknown" ; }
+    die_opt_arg() { die "Option $1 needs an argument" ; }
 	
     program() { echo "foo-goo"; }
     version() { echo "1.2.3"; }
