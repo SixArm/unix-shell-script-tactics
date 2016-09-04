@@ -89,7 +89,7 @@ This sample script shows many of our style guide conventions that we tend to use
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }
     now() { date -u "+%Y-%m-%dT%H:%M:%S,%NZ" ; }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
-    cmd() { command -v $1 >/dev/null 2>&1 }
+    cmd() { command -v $1 >/dev/null 2>&1 ; }
 
     die_cmd_unk() { die "Command $1 is unknown" ; }
     die_opt_unk() { die "Option $1 is unknown" ; }
