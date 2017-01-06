@@ -28,6 +28,7 @@ Highest priority:
 
   * [Safer scripts using `set` flags](safer-scripts-using-set-flags.md)
   * [Program name using a string or basename](program-name-using-a-string-or-basename.md)
+  * [Program directory using pwd and dirname](program-directory-using-pwd-andr-basename.md)
   * [Version name using semantic versioning](version-name-using-semantic-versioning.md)
   * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
   * [Booleans using true and false](booleans-using-true-and-false.md)
@@ -56,7 +57,7 @@ This sample script shows many of our style guide conventions that we tend to use
 
     #/bin/sh
     set -euf
-	
+
     ## Program Tracking ##
 
     program_command="foo-goo-hoo"
@@ -94,7 +95,7 @@ This sample script shows many of our style guide conventions that we tend to use
     die_cmd_unk() { die "Command $1 is unknown" ; }
     die_opt_unk() { die "Option $1 is unknown" ; }
     die_opt_arg() { die "Option $1 needs an argument" ; }
-	
+
     program() { echo "foo-goo"; }
     version() { echo "1.2.3"; }
     confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }
