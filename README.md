@@ -17,7 +17,8 @@ Summary:
   * Executables should have no extension (strongly preferred).
   * Use `printf` instead of `echo` because of security and stability.
   * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
-  * To format dates and times: use UTC and using ISO8601 standards.
+  * To format a date and time: use UTC and using ISO8601 standards.
+  * To format a time, use nanoseconds; note these won't work on default BSD.
   * To run a subshell command: use `$()` instead of backticks.
   * To create temporary files: use `mktemp` instead of `tempfile` et. al.
   * To trap: use `trap "..." EXIT` instead of TERM, INT, HUP, etc.
@@ -88,10 +89,11 @@ This sample script shows many of our style guide conventions that we tend to use
     err() { >&2 printf %s\\n "$*" ; }
     die() { >&2 printf %s\\n "$*" ; exit 1 ; }
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }
-    now() { date -u "+%Y-%m-%dT%H:%M:%S,%NZ" ; }
+    now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }
+    sec() { date -u "+%s" }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
     cmd() { command -v $1 >/dev/null 2>&1 ; }
-
+    
     die_cmd_unk() { die "Command $1 is unknown" ; }
     die_opt_unk() { die "Option $1 is unknown" ; }
     die_opt_arg() { die "Option $1 needs an argument" ; }
