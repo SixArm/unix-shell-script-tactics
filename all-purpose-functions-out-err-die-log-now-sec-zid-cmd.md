@@ -1,4 +1,4 @@
-# All-purpose functions: out, err, log, cmd, now, zid
+# All-purpose functions: out, err, log, cmd, now, sec, zid
 
 Our scripts may use these all-purpose functions:
 
@@ -27,3 +27,7 @@ Code:
     die_cmd_unk() { die "Command $1 is unknown" ; }
     die_opt_unk() { die "Option $1 is unknown" ; }
     die_opt_arg() { die "Option $1 needs an argument" ; }
+
+Caveats:
+
+  * If you use `sec()` on many platforms, then see [sec() function portability](sec-function-portability.md)
