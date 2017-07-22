@@ -1,4 +1,4 @@
-# All-purpose functions: out, err, log, cmd, now, sec, zid
+# All-purpose functions: out, err, die, log, now, sec, zid, cmd, etc.
 
 Our scripts may use these all-purpose functions:
 
