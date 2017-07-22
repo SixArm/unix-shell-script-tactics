@@ -34,7 +34,7 @@ Highest priority:
   * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
   * [Booleans using true and false](booleans-using-true-and-false.md)
   * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
-  * [All-purpose functions: out, err, die, log, now, sec, zid, cmd](all-purpose-functions-out-err-die-log-now-sec-zid-cmd.md)
+  * [Functions: out, err, die, log, now, sec, zid, cmd, etc.](functions-out-err-die-log-now-sec-zid-cmd-etc.md)
   * [sec() function portability](sec-function-portability.md)
 
 Directories and files:
