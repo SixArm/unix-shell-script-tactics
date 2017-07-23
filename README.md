@@ -62,9 +62,8 @@ This sample script shows many of our style guide conventions that we tend to use
 
     ## Program Tracking ##
 
-    program_command="foo-goo-hoo"
+    program_command="my-awesome-command"
     program_version="1.0.0"
-    program_created="2015-01-01"
     program_updated="2016-01-11"
     program_license="GPL"
     program_contact="Alice Adams (alice@example.com)"
@@ -75,14 +74,13 @@ This sample script shows many of our style guide conventions that we tend to use
     help(){
     cat << EOF
 
-    Foo Goo Hoo: this script does some amazing things.
+    My Awesome Command
 
-    Program: your-program-name-here
-    Version: 1.0.0
-    Created: 2016-01-14
-    Updated: 2016-01-15
-    License: GPL
-    Contact: Your Name Here (you@example.com)
+    Program: $program_command
+    Version: $program_version
+    Updated: $program_updated
+    License: $program_license
+    Contact: $program_contact
     EOF
     }
 
@@ -91,18 +89,16 @@ This sample script shows many of our style guide conventions that we tend to use
     die() { >&2 printf %s\\n "$*" ; exit 1 ; }
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }
     now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }
-    sec() { date -u "+%s" }
+    sec() { date "+%s" }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
     cmd() { command -v $1 >/dev/null 2>&1 ; }
     
-    die_cmd_unk() { die "Command $1 is unknown" ; }
-    die_opt_unk() { die "Option $1 is unknown" ; }
-    die_opt_arg() { die "Option $1 needs an argument" ; }
+    die_cmd_unk() { die "Command unknown: $1" ; }
+    die_opt_unk() { die "Option unknown: $1" ; }
+    die_opt_arg() { die "Option argument: $1" ; }
 
-    program() { echo "foo-goo"; }
-    version() { echo "1.2.3"; }
     confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }
-    tempdir() { echo $(mktemp -d -t $program); }
+    tempdir() { echo $(mktemp -d -t $program_command); }
 
     if [ "$#" -eq 1 ]; then
       case "$1" in
@@ -124,4 +120,4 @@ This sample script shows many of our style guide conventions that we tend to use
       esac
     fi
 
-    # The program's main source code starts here
+    # The program's typcial main source code starts here
