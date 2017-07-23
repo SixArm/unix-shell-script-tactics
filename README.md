@@ -105,11 +105,8 @@ This sample script shows many of our style guide conventions that we tend to use
         --help)
           help && exit 0
           ;;
-        --program)
-          program && exit 0
-          ;;
         --version)
-          version && exit 0
+          out $program_version && exit 0
           ;;
         --confdir)
           confdir && exit 0
