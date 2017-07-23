@@ -62,7 +62,7 @@ This sample script shows many of our style guide conventions that we tend to use
 
     ## Program Tracking ##
 
-    program_command="my-awesome-command"
+    program_command="my-awesome-script"
     program_version="1.0.0"
     program_updated="2016-01-11"
     program_license="GPL"
@@ -74,9 +74,9 @@ This sample script shows many of our style guide conventions that we tend to use
     help(){
     cat << EOF
 
-    My Awesome Command
+    My Awesome Script
 
-    Program: $program_command
+    Command: $program_command
     Version: $program_version
     Updated: $program_updated
     License: $program_license
