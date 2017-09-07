@@ -52,6 +52,10 @@ Control flow statements:
   * [Case statement that skips option dash flags](case-statement-that-skips-option-dash-flags.md)
   * [Subshell syntax using parentheses not backticks](subshell-syntax-using-parentheses-not-backticks.md)
 
+Extras:
+
+  * [URL encode and URL decode](url-encode-and-url-decode.md)
+
 
 ### Sample script
 
