@@ -54,8 +54,9 @@ Control flow statements:
 
 Extras:
 
+  * [Array functions](array-functions.md)
   * [URL encode and URL decode](url-encode-and-url-decode.md)
-
+ 
 
 ### Sample script
 
@@ -96,13 +97,23 @@ This sample script shows many of our style guide conventions that we tend to use
     sec() { date "+%s" }
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
     cmd() { command -v $1 >/dev/null 2>&1 ; }
-    
-    die_cmd_unk() { die "Command unknown: $1" ; }
+    arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }
+    ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }
+
+    ## Die helpers
+    die_cmd() { die "Command needed: $1" ; }
+    die_var() { die "Variable needed: $1" ; }    
     die_opt_unk() { die "Option unknown: $1" ; }
     die_opt_arg() { die "Option argument: $1" ; }
 
+    ## Directory helpers
     confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }
     tempdir() { echo $(mktemp -d -t $program_command); }
+
+    ## Verify a command executable, a script variable, and an env variable
+    CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
+    foo="${1:-}"; [ -z "$foo" ] && die_var foo
+    [ -z ${BAR+x} ] && die_var BAR
 
     if [ "$#" -eq 1 ]; then
       case "$1" in
