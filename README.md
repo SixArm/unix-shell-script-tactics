@@ -54,6 +54,7 @@ Control flow statements:
 
 Extras:
 
+  * [Export function](export-function.md)
   * [Array functions](array-functions.md)
   * [URL encode and URL decode](url-encode-and-url-decode.md)
  
@@ -89,26 +90,26 @@ This sample script shows many of our style guide conventions that we tend to use
     EOF
     }
 
-    out() { printf %s\\n "$*" ; }
-    err() { >&2 printf %s\\n "$*" ; }
-    die() { >&2 printf %s\\n "$*" ; exit 1 ; }
-    log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }
-    now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }
-    sec() { date "+%s" }
-    zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }
-    cmd() { command -v $1 >/dev/null 2>&1 ; }
-    arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }
-    ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }
+    out() { printf %s\\n "$*" ; }; export -f out
+    err() { >&2 printf %s\\n "$*" ; }; export -f err
+    die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
+    log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log
+    now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
+    sec() { date "+%s" }; export -f sec
+    zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
+    cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
+    arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
+    ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }; export -f ari
 
     ## Die helpers
-    die_cmd() { die "Command needed: $1" ; }
-    die_var() { die "Variable needed: $1" ; }    
-    die_opt_unk() { die "Option unknown: $1" ; }
-    die_opt_arg() { die "Option argument: $1" ; }
+    die_cmd() { die "Command needed: $1" ; }; export -f die_cmd
+    die_var() { die "Variable needed: $1" ; }; export -f die_var
+    die_opt_unk() { die "Option unknown: $1" ; }; export -f die_opt_unk
+    die_opt_arg() { die "Option argument: $1" ; }; export -f die_opt_arg
 
     ## Directory helpers
-    confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }
-    tempdir() { echo $(mktemp -d -t $program_command); }
+    confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }; export -f confdir;
+    tempdir() { echo $(mktemp -d -t $program_command); }; export -f tempdir;
 
     ## Verify a command executable, a script variable, and an env variable
     CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
