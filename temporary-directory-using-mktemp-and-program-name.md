@@ -2,10 +2,11 @@
 
 To create a temporary directory we use:
 
-  * `mktemp` which creates the directory
-  * our own `program` function that returns the program name.
-
+  * The command `mktemp` which creates the directory.
+  * Our variable `program_command` which returns the name.
+  * Our scripts use the naming convention `tmp_dir()` for the function.
+  * Our scripts use the naming convention `--tmp-dir` for the argument.
+  
 Code:
 
-    program(){ echo "ssid-ample" }
-    tempdir(){ echo $(mktemp -d -t $program) }
+    tmp_dir() { out $(mktemp -d -t $program_command); }; export -f tmp_dir;

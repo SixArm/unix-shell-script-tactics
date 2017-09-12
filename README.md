@@ -108,9 +108,10 @@ This sample script shows many of our style guide conventions that we tend to use
     die_opt_arg() { die "Option argument: $1" ; }; export -f die_opt_arg
 
     ## Directory helpers
-    confdir() { echo ${XDG_CONFIG_HOME:-$HOME/.config}; }; export -f confdir;
-    tempdir() { echo $(mktemp -d -t $program_command); }; export -f tempdir;
+    cfg_dir() { out "${XDG_CONFIG_HOME:-$HOME/.config/$program_command}" ; }; export -f cfg_dir;
+    tmp_dir() { out $(mktemp -d -t $program_command); }; export -f tmp_dir;
 
+    
     ## Verify a command executable, a script variable, and an env variable
     CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
     foo="${1:-}"; [ -z "$foo" ] && die_var foo
@@ -124,11 +125,11 @@ This sample script shows many of our style guide conventions that we tend to use
         --version)
           out $program_version && exit 0
           ;;
-        --confdir)
-          confdir && exit 0
+        --cfg-dir)
+          cfg-dir && exit 0
           ;;
-        --tempdir)
-          tempdir && exit 0
+        --tmp-dir)
+          tmp-dir && exit 0
           ;;
       esac
     fi
