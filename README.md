@@ -95,7 +95,7 @@ This sample script shows many of our style guide conventions that we tend to use
     die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log
     now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
-    sec() { date "+%s" }; export -f sec
+    sec() { date "+%s" ; }; export -f sec
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
     cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
     arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
