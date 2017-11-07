@@ -1,15 +1,17 @@
 # die functions
 
-Our scripts may use these all-purpose functions:
+Our scripts may use this all-purpose function:
 
-  * `die()` is for fatal messages; it prints to STDERR then does exit 1.
-  * `die_cmd_unk()` die because a command is unknown.
-  * `die_opt_unk()` die because an option is unknown.
-  * `die_opt_arg()` die because an option is missing its argument.
-  
+  * `die()` is for fatal messages; it prints a message to STDERR then exits with code 255, which is the highest exit code.
+
 Code:
 
-    die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
-    die_cmd_unk() { die "Command $1 is unknown" ; }; export -f die_cmd_unk
-    die_opt_unk() { die "Option $1 is unknown" ; }; export -f die_opt_unk
-    die_opt_arg() { die "Option $1 needs an argument" ; }; export -f die_opt_arg
+    die() { >&2 printf %s\\n "$*" ; exit 255 ; }; export -f die
+
+We sometimes use these functions too:
+
+    die_arg() { die "Argument: $*" ; }; export -f die_arg
+    die_cmd() { die "Command: $*" ; }; export -f die_cmd
+    die_dir() { die "Directory: $*" ; }; export -f die_dir
+    die_opt() { die "Option: $*" ; }; export -f die_opt
+    die_var() { die "Variable: $*" ; }; export -f die_var

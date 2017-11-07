@@ -4,13 +4,14 @@ Our scripts may use these all-purpose functions:
 
   * `out` is for output messages; it prints to STDOUT.
   * `err` is for error messages; it prints to STDERR.
-  * `die` is for fatal messages; it prints to STDERR then does exit 1.
+  * `die` is for fatal messages; it prints to STDERR then exits.
   * `log` call `out()` prepending a time stamp and PID.
   * `now` return a timestamp using UTC and ISO 8601:2004.
   * `sec` return a timestamp using UTC and Unix epoch second.
   * `zid` return a 128-bit secure random hex lowercase ID.
   * `cmd` return a path to the default runnable command in $1.
-  
+  * `int` parse a string to an integer.
+
 Code:
 
     out() { printf %s\\n "$*" ; }; export -f out
@@ -21,7 +22,18 @@ Code:
     sec() { date -u "+%s" ; }; export -f sec
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
     cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
+    int() { printf -v int '%d\n' "$1" 2>/dev/null ; }; export -f int
 
-Caveats:
 
-  * If you use `sec()` on many platforms, then see [sec() function portability](sec-function-portability.md)
+## Caveat about now()
+
+If you use `now()` on a platform where the date command does not support the nanosecond format, then the output will show "%N". This is harmless. 
+
+If you wish, you can install a date command such as GNU date that does support the nanosecond format. 
+
+For example on macOS 10.13, the built-in date command does not support the nanosecond format. If you wish, you can install GNU date and many other GNU commands, and also prefer them to the built-in commands, by using Homebrew like this: `brew install coreutils --with-default-names`.
+
+
+## Caveat about sec()
+
+If you use `sec()` on many platforms, then see [sec() function portability](sec-function-portability.md)
