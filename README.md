@@ -56,8 +56,8 @@ Extras:
 
   * [Export function](export-function.md)
   * [Array functions](array-functions.md)
+  * [Number functions](number-functions.md)
   * [URL encode and URL decode](url-encode-and-url-decode.md)
- 
 
 ### Sample script
 
@@ -73,7 +73,6 @@ This sample script shows many of our style guide conventions that we tend to use
     program_updated="2016-01-11"
     program_license="GPL"
     program_contact="Alice Adams (alice@example.com)"
-    program_variant="$program_command version $program_version updated $program_updated"
 
     ## Help Function ##
 
@@ -98,7 +97,10 @@ This sample script shows many of our style guide conventions that we tend to use
     sec() { date "+%s" ; }; export -f sec
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
     cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
-    int() { printf -v int '%d\n' "$1" 2>/dev/null ; }; export -f int
+
+    ## Number helpers
+    int() { awk '{ print int($1) }' ; }; export -f int
+    sum() { awk '{for(i=1; i<=NF; i++) sum+=$i; } END {print sum}' ; }; export -f sum
 
     ## Array helpers: array index and array number of fields
     ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }; export -f ari
@@ -113,13 +115,13 @@ This sample script shows many of our style guide conventions that we tend to use
     foo="${1:-}"; [ -z "$foo" ] && die_var foo
     [ -z ${BAR+x} ] && die_var BAR
 
-    if [ "$#" -eq 1 ]; then
+    if [ "$#" -ge 1 ]; then
       case "$1" in
         --help)
           help; exit 0
           ;;
-        -v|--version|--variant)
-          out $program_variant; exit 0
+        -v|--version)
+          out $program_version; exit 0
           ;;
         --conf-dir)
           out $(conf_dir); exit 0

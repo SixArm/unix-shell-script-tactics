@@ -10,7 +10,6 @@ Our scripts may use these all-purpose functions:
   * `sec` return a timestamp using UTC and Unix epoch second.
   * `zid` return a 128-bit secure random hex lowercase ID.
   * `cmd` return a path to the default runnable command in $1.
-  * `int` parse a string to an integer.
 
 Code:
 
@@ -22,7 +21,6 @@ Code:
     sec() { date -u "+%s" ; }; export -f sec
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
     cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
-    int() { printf -v int '%d\n' "$1" 2>/dev/null ; }; export -f int
 
 
 ## Caveat about now()
