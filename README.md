@@ -28,6 +28,7 @@ Summary:
 Highest priority:
 
   * [Safer scripts using `set` flags](safer-scripts-using-set-flags.md)
+  * [Trap exit](trap-exit.md)
   * [Program name using a string or basename](program-name-using-a-string-or-basename.md)
   * [Program directory using pwd and dirname](program-directory-using-pwd-andr-basename.md)
   * [Version name using semantic versioning](version-name-using-semantic-versioning.md)
@@ -55,8 +56,8 @@ Control flow statements:
 Extras:
 
   * [Export function](export-function.md)
-  * [Array functions](array-functions.md)
   * [Number functions](number-functions.md)
+  * [Array functions](array-functions.md)
   * [URL encode and URL decode](url-encode-and-url-decode.md)
 
 ### Sample script
