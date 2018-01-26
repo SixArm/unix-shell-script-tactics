@@ -43,6 +43,7 @@ Directories and files:
   * [Configuration directory using XDG_CONFIG_HOME](configuration-directory-using-xdg-config-home.md)
   * [Temporary directory using `mktemp` and `program`](temporary-directory-using-mktemp-and-program.md)
   * [Temporary file using `mktemp` and `trap`](temporary-file-using-mktemp-and-trap.md)
+  * [Find files with filter for permission denied](find-files-with-filter-for-permission-denied.md)
   * [Find files with special characters](find-files-with-special-characters.md)
   * [Find files with readable permissions](find-files-with-readable-permissions.md)
 
