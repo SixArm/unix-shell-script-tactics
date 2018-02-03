@@ -109,8 +109,8 @@ This sample script shows many of our style guide conventions that we tend to use
     arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
 
     ## Directory helpers: configuration directory and temporary directory
-    conf_dir() { out "${XDG_CONFIG_HOME:-$HOME/.config/$program_command}" ; }; export -f conf_dir;
-    temp_dir() { out $(mktemp -d -t $program_command); }; export -f temp_dir;
+    config_dir() { out "${XDG_CONFIG_HOME:-$HOME/.config}" ; }; export -f config_dir;
+    temp_dir() { out $(mktemp -d -t "${1:-$(zid)}"); }; export -f temp_dir;
     
     ## Verify a command executable, a script variable, and an env variable
     CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
