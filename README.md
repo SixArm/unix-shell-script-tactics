@@ -125,8 +125,8 @@ This sample script shows many of our style guide conventions that we tend to use
         -v|--version)
           out $program_version; exit 0
           ;;
-        --conf-dir)
-          out $(conf_dir); exit 0
+        --config-dir)
+          out $(config_dir); exit 0
           ;;
         --temp-dir)
           out $(temp_dir); exit 0
