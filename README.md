@@ -36,6 +36,7 @@ Highest priority:
   * [Booleans using true and false](booleans-using-true-and-false.md)
   * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
   * [Functions: out, err, die, log, now, sec, zid, cmd, etc.](functions-out-err-die-log-now-sec-zid-cmd-etc.md)
+  * [Assert functions: assert_empty, assert_equal, assert_match](assert-functions.md)
   * [sec() function portability](sec-function-portability.md)
 
 Directories and files:
@@ -111,7 +112,12 @@ This sample script shows many of our style guide conventions that we tend to use
     ## Directory helpers: configuration directory and temporary directory
     config_dir() { out "${XDG_CONFIG_HOME:-$HOME/.config}" ; }; export -f config_dir;
     temp_dir() { out $(mktemp -d -t "${1:-$(zid)}"); }; export -f temp_dir;
-    
+
+    ## Assert helpers
+    assert_empty() { [ -z "$1" ]      || err $FUNCNAME "$@" ; }; export -f assert_empty
+    assert_equal() { [ "$1" = "$2" ]  || err $FUNCNAME "$@" ; }; export -f assert_equal
+    assert_match() { [[ "$2" =~ $1 ]] || err $FUNCNAME "$@" ; }; export -f assert_match
+
     ## Verify a command executable, a script variable, and an env variable
     CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
     foo="${1:-}"; [ -z "$foo" ] && die_var foo
