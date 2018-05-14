@@ -7,6 +7,7 @@ General advice:
   * [Google Shell Script Style Guide](https://google.github.io/styleguide/shell.xml])
   * [Filenames and Pathnames in Shell: How to do it Correctly](http://www.dwheeler.com/essays/filenames-in-shell.html)
   * [Standard Command-Line Options](http://www.tldp.org/LDP/abs/html/standard-options.html)
+  * [How to do things safely in bash](https://github.com/anordal/shellharden/blob/master/how_to_do_things_safely_in_bash.md)
 
 Summary:
 
