@@ -39,7 +39,7 @@ Example:
   * -v --version: 
       print the program version number
 
-  * --conf-dir:
+  * --config-dir:
       print the configuration directory path
 
   * --temp-dir:
@@ -90,7 +90,7 @@ ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}"
 arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
 
 ## Directory helpers: configuration directory and temporary directory
-conf_dir() { out "${XDG_CONFIG_HOME:-$HOME/.config/$program_command}" ; }; export -f conf_dir;
+config_dir() { out "${XDG_CONFIG_HOME:-$HOME/.config/$program_command}" ; }; export -f config_dir;
 temp_dir() { out $(mktemp -d -t $program_command); }; export -f temp_dir;
 
 ## Verify a command executable, a script variable, and an env variable
@@ -121,8 +121,8 @@ if [ "$#" -eq 1 ]; then
     --program-contact)
       out $program_contact; exit 0
       ;;
-    --conf-dir)
-      out "$(conf_dir)"; exit 0
+    --config-dir)
+      out "$(config_dir)"; exit 0
       ;;
     --temp-dir)
       out "$(temp_dir)"; exit 0
