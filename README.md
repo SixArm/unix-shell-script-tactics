@@ -1,5 +1,27 @@
 # SixArm.com » <br> Shell Style Guide
 
+SixArm is a software consultancy and our clients use a wide range of shells and systems; this is our shell style guide that helps us write better shell scripts for speed, security, stability, and sharability.
+
+Summary:
+
+  * [Aim for POSIX when possible because of portability and standardization](aim-for-posix.md).
+  * [Protect scripts by using "set" flags such as `set -euf`](protect-scripts-by-using-set-flags.md).
+  * [Trap signals and exit by using `trap "..." EXIT` instead of TERM, INT, HUP, etc.](trap-signals-and-call-exit.md).
+  * [Version name: use semantic versioning](version-name-use-semantic-versioning.md).
+  * [Help: use a function and HERE document](help-use-a-function-and-here-document.md).
+  * [Date &amp; time format: use UTC and ISO8601](date-time-format-use-utc-and-iso8601.md).
+  * [Configuration directory: use XDG_CONFIG_HOME](choose-configuration-directory-using-xdg-config-home.md).
+  * [Booleans: use true and false](booleans-use-true-and-false.md).
+  * [Subshells: use parentheses not backticks](subshells-use-parentheses-not-backticks.md)
+  * Quote liberally such as `"$var"` instead of just `$var`, for safety.
+  * Bulletproof scripts to handle characters such as a quote, newline, leading dash.
+  * Executables should have no extension (strongly preferred).
+  * Use `printf` instead of `echo` because of security and stability.
+  * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
+  * Run a subshell command by using `$()` instead of backticks.
+  * Create temporary files by using `mktemp` instead of `tempfile` et. al.
+  * Parse options by using `while` and `case` instead of `getopts` or `getopt`.
+
 General advice:
 
   * [Writing safe shell scripts](https://sipb.mit.edu/doc/safe-shell/)
@@ -9,40 +31,16 @@ General advice:
   * [Standard Command-Line Options](http://www.tldp.org/LDP/abs/html/standard-options.html)
   * [How to do things safely in bash](https://github.com/anordal/shellharden/blob/master/how_to_do_things_safely_in_bash.md)
 
-Summary:
+High priority:
 
-  * Use POSIX whenever possible because POSIX is portable.
-  * Set shell script flags to protect the script such as `set -euf`.
-  * Quote liberally such as `"$var"` instead of just `$var`, for safety.
-  * Bulletproof to handle characters such as a quote, newline, leading dash.
-  * Executables should have no extension (strongly preferred).
-  * Use `printf` instead of `echo` because of security and stability.
-  * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
-  * To format a date and time: use UTC and using ISO8601 standards.
-  * To format a time, use nanoseconds; note these won't work on default BSD.
-  * To run a subshell command: use `$()` instead of backticks.
-  * To create temporary files: use `mktemp` instead of `tempfile` et. al.
-  * To trap: use `trap "..." EXIT` instead of TERM, INT, HUP, etc.
-  * To parse options: use `while` and `case` instead of `getopts` or `getopt`.
-  * To access a user's configuration directory: `${XDG_CONFIG_HOME:-$HOME/.config}`
-
-Highest priority:
-
-  * [Safer scripts using `set` flags](safer-scripts-using-set-flags.md)
-  * [Trap exit](trap-exit.md)
   * [Program name using a string or basename](program-name-using-a-string-or-basename.md)
   * [Program directory using pwd and dirname](program-directory-using-pwd-andr-basename.md)
-  * [Version name using semantic versioning](version-name-using-semantic-versioning.md)
-  * [Help function using here document and metadata](help-function-using-here-document-and-metadata.md)
-  * [Booleans using true and false](booleans-using-true-and-false.md)
-  * [Date &amp; time format using UTC and ISO8601](date-time-format-using-utc-and-iso8601.md)
   * [Functions: out, err, die, log, now, sec, zid, cmd, etc.](functions-out-err-die-log-now-sec-zid-cmd-etc.md)
   * [Assert functions: assert_empty, assert_equal, assert_match](assert-functions.md)
   * [sec() function portability](sec-function-portability.md)
 
 Directories and files:
 
-  * [Configuration directory using XDG_CONFIG_HOME](configuration-directory-using-xdg-config-home.md)
   * [Temporary directory using `mktemp` and `program`](temporary-directory-using-mktemp-and-program.md)
   * [Temporary file using `mktemp` and `trap`](temporary-file-using-mktemp-and-trap.md)
   * [Find files with filter for permission denied](find-files-with-filter-for-permission-denied.md)
@@ -54,7 +52,6 @@ Control flow statements:
   * [While loop with index counter](while-loop-with-index-counter.md)
   * [Do while loop](do-while-loop.md)
   * [Case statement that skips option dash flags](case-statement-that-skips-option-dash-flags.md)
-  * [Subshell syntax using parentheses not backticks](subshell-syntax-using-parentheses-not-backticks.md)
 
 Extras:
 
@@ -63,7 +60,9 @@ Extras:
   * [Array functions](array-functions.md)
   * [URL encode and URL decode](url-encode-and-url-decode.md)
 
+
 ### Sample script
+
 
 This sample script shows many of our style guide conventions that we tend to use for our public, larger, longer scripts.
 

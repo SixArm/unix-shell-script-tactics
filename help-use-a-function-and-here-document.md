@@ -1,13 +1,15 @@
-# Help function using here document and metadata
+# Help: use a function and HERE document
 
-We prefer a help function vs. header comments.
-
-Code:
+Provide help using a function and HERE document syntax such as:
 
     help(){
-      echo "Foo script: this script does something cool."
-    }
+    cat << HERE
+    This is my script.
 
+    This is a good place for an explanation of the syntax,
+    and examples, and explanations of any options, etc.
+    HERE
+    }
 
 To show the help, one way is like this:
 
@@ -18,21 +20,6 @@ To show the help, one way is like this:
           ;;
       esac
     fi
-
-
-## Here doc
-
-To write help that uses more than one line, we prefer using a "here document" like this:
-
-    help(){
-    cat << END
-    Foo script: this script does something cool.
-
-    Here is a good place for an explanation of the syntax,
-    and examples, and explanations of any options, etc.
-
-    END
-    }
 
 
 ## Markdown
@@ -53,10 +40,6 @@ Examples:
 
 If a script is a typical command, then we prefer to show the syntax and an example, like this:
 
-    help(){
-    cat << END
-    ...
-
     Syntax:
 
         foo <text> [...]
@@ -67,9 +50,6 @@ If a script is a typical command, then we prefer to show the syntax and an examp
 
         $ foo hello world
 
-    END
-    }
-
 Note:
 
   * We prefer using a "$" dollar sign to indicate a typical command line prompt.
@@ -79,11 +59,7 @@ Note:
 
 If a script has command line options, then we prefer to show them using a bullet list, like this:
 
-    help(){
-    cat << END
-    ...
-
-    ## Options
+    Options:
 
       * -h --help: 
         show this help information
@@ -91,28 +67,18 @@ If a script has command line options, then we prefer to show them using a bullet
       * -v --version: 
         show the command name, version number, and updated date.
 
-    END
-    }
-
 
 ## Tracking
 
 If a script is intended for the public, then we prefer to show tracking metadata using a bullet list, like this:
 
-    help(){
-    cat << EOF
-    ...
-
-    ## Tracking
+    Tracking:
 
       * Command: my-foo-script
       * Version: 1.0.0
-      * Updated: 2016-01-11
+      * Updated: 2018-01-01
       * License: GPL
       * Contact: Alice Adams (alice@example.com)
-
-    EOF
-    }
 
 
 ## Tracking varaibles

@@ -1,4 +1,4 @@
-# Booleans using true and false
+# For booleans use true and false
 
 Booleans using true and false can use the shell built-in commands like this:
 

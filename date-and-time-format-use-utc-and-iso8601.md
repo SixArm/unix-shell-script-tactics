@@ -1,4 +1,4 @@
-# Date &amp; time format using UTC and ISO8601
+# Date &amp; time format: use UTC and ISO8601
 
 For date values and time values, we prefer:
 
@@ -6,12 +6,18 @@ For date values and time values, we prefer:
 
   * ISO8601 standard format and sort-friendly ordering such as YYYY-MM-DD and HH:MM:SS.
 
+  * To format a time, use nanoseconds; note these won't work on default BSD.
+
 Examples:
 
   * Time: 12:59:59
+
   * Time with nanoseconds: 12:59:59.123456789 (for the decimal point, we use a period, not a comma)
+
   * Date: 2016-12-31
+
   * Date with weekly format: 2016-W52-7
+
   * Timestamping: 2016-12-31T12:59:59Z (we use formatting and Zulu time)
 
 Notes:

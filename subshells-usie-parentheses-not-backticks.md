@@ -1,4 +1,4 @@
-# Subshell syntax using parentheses not backticks
+# Subshells: use parentheses not backticks
 
 To write a subshell command, you can use parentheses or backticks.
 

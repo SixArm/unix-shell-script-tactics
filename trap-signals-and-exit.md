@@ -1,4 +1,4 @@
-# Trap
+# Trap signals and exit
 
 Trap signals, such as user pressing CTRL-C, and call an exit function.
 

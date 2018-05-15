@@ -7,21 +7,27 @@ We use simple array functions.
 
 Syntax:
 
-    arn <string> [field separator]
-    ari <string> [field separator] <index>
+  ```shell
+  arn <string> [field separator]
+  ari <string> [field separator] <index>
+  ```
 
 Examples:
 
-    arn 'a b c' => 3
-    arn 'a-b-c' '-' => 3
+  ```shell
+  arn 'a b c' => 3
+  arn 'a-b-c' '-' => 3
 
-    ari 'a b c' 2 =>  'b'
-    ari 'a-b-c' '-' 2 =>  'b'
+  ari 'a b c' 2 =>  'b'
+  ari 'a-b-c' '-' 2 =>  'b'
+  ```
     
 Source:
 
-    arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
-    ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }; export -f ari
+  ```shell
+  arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
+  ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }; export -f ari
+  ```
 
 
 
