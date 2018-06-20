@@ -29,6 +29,7 @@ Directories:
   * [Log directory: use LOG_HOME](doc/directories/cache-directory-use-log-home.md)
   * [Cache directory: use XDG_CACHE_HOME](doc/directories/cache-directory-use-xdg-cache-home.md)
   * [Configuration directory: use XDG_CONFIG_HOME](doc/directories/configuration-directory-use-xdg-config-home.md)
+  * [Runtime directory: use XDG_RUNTIME_HOME](doc/directories/runtime-directory-use-xdg-runtime-home.md)
   * [Temporary directory:: use `mktemp` and `program`](doc/directories/temporary-directory-use-mktemp.md)
 
 Files:
