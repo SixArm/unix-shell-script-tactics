@@ -10,7 +10,6 @@ Highlights:
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document.md)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
-  * [Configuration directory: use XDG_CONFIG_HOME](doc/configuration-directory-use-xdg-config-home.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
   * [SixArm shell style guide demo script](doc/sixarm-shell-style-guide-demo.sh)
@@ -24,6 +23,20 @@ Recommendations:
   * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
   * Create temporary files by using `mktemp` instead of `tempfile` et. al.
   * Parse options by using `while` and `case` instead of `getopts` or `getopt`.
+
+Directories:
+
+  * [Log directory: use LOG_HOME](doc/directories/cache-directory-use-log-home.md)
+  * [Cache directory: use XDG_CACHE_HOME](doc/directories/cache-directory-use-xdg-cache-home.md)
+  * [Configuration directory: use XDG_CONFIG_HOME](doc/directories/configuration-directory-use-xdg-config-home.md)
+  * [Temporary directory:: use `mktemp` and `program`](doc/directories/temporary-directory-use-mktemp.md)
+
+Files:
+
+  * [Temporary file using `mktemp` and `trap`](doc/temporary-file-using-mktemp-and-trap.md)
+  * [Find files with filter for permission denied](doc/find-files-with-filter-for-permission-denied.md)
+  * [Find files with special characters](doc/find-files-with-special-characters.md)
+  * [Find files with readable permissions](doc/find-files-with-readable-permissions.md)
 
 References:
 
@@ -41,14 +54,6 @@ Conventions:
   * [Functions: out, err, die, log, now, sec, zid, cmd, etc.](doc/functions-out-err-die-log-now-sec-zid-cmd-etc.md)
   * [Assert functions: assert_empty, assert_equal, assert_match](doc/assert-functions.md)
   * [sec() function portability](doc/sec-function-portability.md)
-
-Files:
-
-  * [Temporary directory using `mktemp` and `program`](doc/temporary-directory-using-mktemp-and-program.md)
-  * [Temporary file using `mktemp` and `trap`](doc/temporary-file-using-mktemp-and-trap.md)
-  * [Find files with filter for permission denied](doc/find-files-with-filter-for-permission-denied.md)
-  * [Find files with special characters](doc/find-files-with-special-characters.md)
-  * [Find files with readable permissions](doc/find-files-with-readable-permissions.md)
 
 Control flow statements:
 
