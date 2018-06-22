@@ -1,4 +1,4 @@
-# Find with filter for "Permission Denied"
+# Find files with filter for "Permission Denied"
 
 The `find` command can print error messages that say "Permission Denied".
 

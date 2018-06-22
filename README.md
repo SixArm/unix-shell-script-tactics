@@ -39,6 +39,7 @@ Files:
   * [Find files with filter for permission denied](doc/find-files-with-filter-for-permission-denied.md)
   * [Find files with special characters](doc/find-files-with-special-characters.md)
   * [Find files with readable permissions](doc/find-files-with-readable-permissions.md)
+  * [Find files with executable, perm, test, exec](doc/find-files-with-executable-perm-test-exec.md)
 
 References:
 
