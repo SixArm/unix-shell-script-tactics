@@ -126,11 +126,11 @@ runtime_home() { out "${XDG_RUNTIME_HOME:=$HOME/.runtime}" ; }; export -f runtim
 temp_home() { out $(mktemp -d -t "${1:-$(zid)}"); }; export -f temp_home;
 
 ## Directory helpers
-log_dir() { out $(log_home) "/$program_command" ; };
-data_dir() { out $(data_home) "/$program_command" ; };
-cache_dir() { out $(cache_home) "/$program_command" ; }; 
-config_dir() { out $(config_home) "/$program_command" ; }; 
-runtime_dir() { out $(runtime_home) "/$program_command" ; }; 
+log_dir() { out $(log_home)"/$program_command" ; };
+data_dir() { out $(data_home)"/$program_command" ; };
+cache_dir() { out $(cache_home)"/$program_command" ; }; 
+config_dir() { out $(config_home)"/$program_command" ; }; 
+runtime_dir() { out $(runtime_home)"/$program_command" ; }; 
 temp_dir() { out $(temp_home "$program_command"); };
 
 

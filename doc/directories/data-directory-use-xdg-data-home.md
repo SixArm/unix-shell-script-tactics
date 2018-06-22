@@ -9,7 +9,7 @@ We prefer to have a user's data directory in a standard place:
 Code:
 
     data_home() { out "${XDG_DATA_HOME:-$HOME/.local/share}" ; }; export -f data_home;
-    data_dir() { out $(data_home) "/$program_command" ; };
+    data_dir() { out $(data_home)"/$program_command" ; };
 
 References:
 

@@ -9,7 +9,7 @@ We prefer to have a user's configuration directory in a standard place:
 Code:
 
     config_home() { out "${XDG_CONFIG_HOME:-$HOME/.config}" ; }; export -f config_home;
-    config_dir() { out $(config_home) "/$program_command" ; };
+    config_dir() { out $(config_home)"/$program_command" ; };
 
 Notes:
 

@@ -9,4 +9,4 @@ We prefer to have a user's log directory in a standard place:
 Code:
 
     log_home() { out "${LOG_DIR:-$HOME/.log}" ; }; export -f log_home;
-    log_dir() { out $(log_home) "/$program_command" ; };
+    log_dir() { out $(log_home)"/$program_command" ; };

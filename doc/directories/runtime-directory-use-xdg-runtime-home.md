@@ -9,7 +9,7 @@ We prefer to have a user's runtime directory in a standard place:
 Code:
 
     runtime_home() { out "${XDG_RUNTIME_HOME:-$HOME/.runtime}" ; }; export -f runtime_home;
-    runtime_dir() { out $(runtime_home) "/$program_command" ; };
+    runtime_dir() { out $(runtime_home)"/$program_command" ; };
 
 Purpose:
 
