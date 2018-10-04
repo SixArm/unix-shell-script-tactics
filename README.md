@@ -26,6 +26,7 @@ Recommendations:
 
 Directories:
 
+  * [Script directory](doc/directories/script-directory.md)
   * [Log directory: use $LOG_HOME](doc/directories/cache-directory-use-log-home.md)
   * [Data directory: use $XDG_DATA_HOME](doc/directories/data-directory-use-xdg-data-home.md)
   * [Cache directory: use $XDG_CACHE_HOME](doc/directories/cache-directory-use-xdg-cache-home.md)
