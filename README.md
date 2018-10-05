@@ -65,11 +65,14 @@ Control flow statements:
   * [Do while loop](doc/do-while-loop.md)
   * [Case statement that skips option dash flags](doc/case-statement-that-skips-option-dash-flags.md)
 
-Fuctions:
+Functions:
 
   * [Export function](doc/export-function.md)
   * [Number functions](doc/number-functions.md)
   * [Array functions](doc/array-functions.md)
   * [URL encode and URL decode](doc/url-encode-and-url-decode.md)
 
+PostgreSQL psql:
 
+  * [psql helpers](doc/psql-helpers.md)
+  
