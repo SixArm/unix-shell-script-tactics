@@ -102,7 +102,7 @@ out() { printf %s\\n "$*" ; }; export -f out
 err() { >&2 printf %s\\n "$*" ; }; export -f err
 die() { err $(log) "$*" ; exit 255 ; }; export -f die
 log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log
-now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
+now() { date -u "+%Y-%m-%dT%H:%M:%S.%N+00:00" ; }; export -f now
 sec() { date "+%s" ; }; export -f sec
 zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
 cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
@@ -115,8 +115,8 @@ int() { awk '{ print int($1) }' ; }; export -f int
 sum() { awk '{for(i=1; i<=NF; i++) sum+=$i; } END {print sum}' ; }; export -f sum
 
 ## Array helpers: array index and array number of fields
-ari() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }; export -f ari
-arn() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f arn
+array_i() { [ $# == 3 ] && awk -F "$2" "{print \$$3}" <<< "$1" || awk "{print \$$2}" <<< "$1" ; }; export -f array_i
+array_n() { [ $# == 2 ] && awk -F "$2" "{print NF}"   <<< "$1" || awk "{print NF}"   <<< "$1" ; }; export -f array_n
 
 ## Home helpers
 log_home() { out "${LOG_HOME:=$HOME/.log}" ; }; export -f log_home;
@@ -134,6 +134,10 @@ config_dir() { out $(config_home)"/$program_command" ; };
 runtime_dir() { out $(runtime_home)"/$program_command" ; }; 
 temp_dir() { out $(temp_home "$program_command"); };
 
+## Assert helpers
+assert_empty() { [ -z "$1" ] || err $FUNCNAME "$@" ; }
+assert_equal() { [ "$1" = "$2" ] || err $FUNCNAME "$@" ; }
+assert_match() { [[ "$2" =~ $1 ]] || err $FUNCNAME "$@" ; }
 
 ## Verify a command executable, a script variable, and an env variable
 #CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
