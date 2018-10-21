@@ -107,7 +107,7 @@ sec() { date "+%s" ; }; export -f sec
 zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
 cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
 dir() { CDPATH= cd -- "$(dirname -- "$0")" && pwd -P ; }
-exe() { [ -d "$1" ] && find "$1" -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \) -exec test -x {}; \; -exec {} \; ; }
+exe() { [ -d "$1" ] && find "$1" -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \) -exec test -x {} \; -exec {} \; ; }
 int() { printf -v int '%d\n' "$1" 2>/dev/null ; }; export -f int
 
 ## Number helpers
