@@ -5,6 +5,7 @@ Our scripts may use these all-purpose functions:
   * `out` is for output messages; it prints to STDOUT.
   * `err` is for error messages; it prints to STDERR.
   * `die` is for fatal messages; it prints to STDERR then exits.
+  * `big` is for banner messsages; it prints to STDOUT.
   * `log` call `out()` prepending a time stamp and PID.
   * `now` return a timestamp using UTC and ISO 8601:2004.
   * `sec` return a timestamp using UTC and Unix epoch second.
@@ -16,6 +17,7 @@ Code:
     out() { printf %s\\n "$*" ; }; export -f out
     err() { >&2 printf %s\\n "$*" ; }; export -f err
     die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
+    big() { printf \\n###\\n#\\n#\ %s\\n#\\n###\\n\\n "$*"; }; export -f big
     log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log 
     now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
     sec() { date -u "+%s" ; }; export -f sec

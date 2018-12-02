@@ -101,6 +101,7 @@ EOF
 out() { printf %s\\n "$*" ; }; export -f out
 err() { >&2 printf %s\\n "$*" ; }; export -f err
 die() { err $(log) "$*" ; exit 255 ; }; export -f die
+big() { printf \\n###\\n#\\n#\ %s\\n#\\n###\\n\\n "$*"; }; export -f big
 log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log
 now() { date -u "+%Y-%m-%dT%H:%M:%S.%N+00:00" ; }; export -f now
 sec() { date "+%s" ; }; export -f sec

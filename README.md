@@ -55,7 +55,7 @@ Conventions:
 
   * [Program name using a string or basename](doc/program-name-using-a-string-or-basename.md)
   * [Program directory using pwd and dirname](doc/program-directory-using-pwd-andr-basename.md)
-  * [Functions: out, err, die, log, now, sec, zid, cmd, etc.](doc/functions-out-err-die-log-now-sec-zid-cmd-etc.md)
+  * [Functions: out, err, die, big, log, now, sec, zid, cmd, etc.](doc/functions-out-err-die-big-log-now-sec-zid-cmd-etc.md)
   * [Assert functions: assert_empty, assert_equal, assert_match](doc/assert-functions.md)
   * [sec() function portability](doc/sec-function-portability.md)
 
