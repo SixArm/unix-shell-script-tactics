@@ -2,11 +2,11 @@
 
 Our scripts may use this all-purpose function:
 
-  * `die()` is for fatal messages; it prints a message to STDERR then exits with code 255, which is the highest exit code.
+  * `die()` is for fatal messages; it prints a message to STDERR then exits with code 1, which is the most common error exit code.
 
 Code:
 
-    die() { >&2 printf %s\\n "$*" ; exit 255 ; }; export -f die
+    die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
 
 We sometimes use these functions too:
 
