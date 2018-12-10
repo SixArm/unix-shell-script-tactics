@@ -22,7 +22,7 @@ Code:
     now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
     sec() { date -u "+%s" ; }; export -f sec
     zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
-    cmd() { command -v $1 >/dev/null 2>&1 ; }; export -f cmd
+    cmd() { command -v "$1" >/dev/null 2>&1 ; }; export -f cmd
 
 
 ## Caveat about now()
