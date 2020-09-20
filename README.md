@@ -12,7 +12,6 @@ Highlights:
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
-  * [Environment variables: test if set or unset](doc/environment-variables-test-if-set-or-unset.md)
   * [SixArm shell style guide demo script](doc/sixarm-shell-style-guide-demo.sh)
 
 Recommendations:
@@ -24,6 +23,11 @@ Recommendations:
   * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
   * Create temporary files by using `mktemp` instead of `tempfile` et. al.
   * Parse options by using `while` and `case` instead of `getopts` or `getopt`.
+
+Environment variables:
+
+  * [Test if set or unset](doc/environment-variables/test-if-set-or-unset.md)
+  * [$FUNCNAME function name](doc/environment-variables/funcname-function-name.md)
 
 Directories:
 
