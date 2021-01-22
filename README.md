@@ -24,6 +24,10 @@ Recommendations:
   * Create temporary files by using `mktemp` instead of `tempfile` et. al.
   * Parse options by using `while` and `case` instead of `getopts` or `getopt`.
 
+Argumemt parsing:
+
+  * [Arg parse](doc/arg-parse.md)
+:
 Environment variables:
 
   * [Test if set or unset](doc/environment-variables/test-if-set-or-unset.md)
