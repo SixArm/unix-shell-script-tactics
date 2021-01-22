@@ -14,7 +14,7 @@ for arg; do
 		    value="${arg#*=}";
 		    ;;
 		*)
-		    value=true
+		    value=1
 		    ;;
 	    esac
 	    key="${key//-/_}"
@@ -30,4 +30,6 @@ done
 
 ## Notes
 
-The `for arg do` is shorthand for `for arg in "$@"; do`.
+The code `for arg do` is shorthand for `for arg in "$@"; do`.
+
+The code `value=1` is how shell arithmetic represents "true".
