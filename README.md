@@ -14,7 +14,6 @@ Highlights:
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
-  * [Demo](doc/demo.sh)
 
 Recommendations:
 
@@ -25,6 +24,10 @@ Recommendations:
   * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
   * Create temporary files by using `mktemp` instead of `tempfile` et. al.
   * Parse options by using `while` and `case` instead of `getopts` or `getopt`.
+
+Demo:
+
+  * [Unix shell script tactics demo](bin/unix-shell-script-tactics-demo)
 
 Argumemt parsing:
 
