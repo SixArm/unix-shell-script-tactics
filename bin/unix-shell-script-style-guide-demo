@@ -3,10 +3,11 @@ set -euf
 
 ## Program Tracking
 
-program_command="sixarm-shell-style-guide-demo"
-program_version="5.0.0"
-program_updated="2018-06-16"
+program_command="unix-shell-script-style-guide-demo"
+program_version="6.0.0"
+program_updated="2022-10-23"
 program_license="GPL"
+program_website="https://example.com/example/"
 program_contact="Alice Adams (alice@example.com)"
 
 ## Help Function
@@ -14,15 +15,15 @@ program_contact="Alice Adams (alice@example.com)"
 help(){
 cat << EOF
 
-SixArm shell style guide demo
+Unix shell script style guide demo
 
 Syntax:
 
-    sixarm-shell-style-guide-demo.sh
+    unix-shell-script-style-guide-demo
 
 Example:
 
-    sixarm-shell-style-guide-demo --version
+    unix-shell-script-style-guide-demo --version
 
 
 ## Options
@@ -84,9 +85,14 @@ Example:
   * --program-license:
       print the program license name
 
+  * --program-website:
+      print the program website URL
+
   * --program-contact:
       print the program contact information for the maintainer
 
+  * --program-website:
+      print the program website URL
 
 ## Tracking
 
@@ -94,6 +100,7 @@ Example:
   * Version: $program_version
   * Updated: $program_updated
   * License: $program_license
+  * Website: $program_website
   * Contact: $program_contact
 EOF
 }
@@ -151,22 +158,25 @@ if [ "$#" -eq 1 ]; then
       help; exit 0
       ;;
     -v|--version)
-      out $program_version; exit 0
+      out "$program_version"; exit 0
       ;;
     --program-command)
-      out $program_command; exit 0
+      out "$program_command"; exit 0
       ;;
     --program-version)
-      out $program_version; exit 0
+      out "$program_version"; exit 0
       ;;
     --program-updated)
-      out $program_version; exit 0
+      out "$program_version"; exit 0
       ;;
     --program-license)
-      out $program_license; exit 0
+      out "$program_license"; exit 0
+      ;;
+    --program-website)
+      out "$program_website"; exit 0
       ;;
     --program-contact)
-      out $program_contact; exit 0
+      out "$program_contact"; exit 0
       ;;
     --log-dir)
       out "$(log_dir)"; exit 0

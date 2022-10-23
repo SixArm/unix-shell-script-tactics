@@ -78,8 +78,8 @@ If a script is intended for the public, then we prefer to show tracking metadata
       * Version: 1.0.0
       * Updated: 2018-01-01
       * License: GPL
+      * Website: https://example.com/example/
       * Contact: Alice Adams (alice@example.com)
-
 
 ## Tracking varaibles
 
@@ -89,6 +89,7 @@ If a script is intended for the public, and we want it to be professional, then 
     program_version="1.0.0"
     program_updated="2016-01-11"
     program_license="GPL"
+    program_website="https://example.com"
     program_contact="Alice Adams (alice@example.com)"
 
     help(){
@@ -101,6 +102,7 @@ If a script is intended for the public, and we want it to be professional, then 
       * Version: $program_version
       * Updated: $program_updated
       * License: $program_license
+      * Website: $program_website
       * Contact: $program_contact
 
     EOF
@@ -116,5 +118,23 @@ To show the help, we parse the command line options; one way is this simple code
         -v|--version)
           out "$program_version"; exit 0
           ;;
+      --program-command)
+        out "$program_command"; exit 0
+        ;;
+      --program-version)
+        out "$program_version"; exit 0
+        ;;
+      --program-updated)
+        out "$program_version"; exit 0
+        ;;
+      --program-license)
+        out "$program_license"; exit 0
+        ;;
+      --program-website)
+        out "$program_website"; exit 0
+        ;;
+      --program-contact)
+        out "$program_contact"; exit 0
+        ;;
       esac
     fi
