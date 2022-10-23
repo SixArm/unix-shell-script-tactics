@@ -27,5 +27,4 @@ url_decode() {
   printf -v REPLY '%b' "${1//%/\\x}" # You can either set a return variable (FASTER)
   echo "${REPLY}"
 }
-
 ```

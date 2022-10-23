@@ -14,16 +14,17 @@ Our scripts may use these all-purpose functions:
 
 Code:
 
-    out() { printf %s\\n "$*" ; }; export -f out
-    err() { >&2 printf %s\\n "$*" ; }; export -f err
-    die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
-    big() { printf \\n###\\n#\\n#\ %s\\n#\\n###\\n\\n "$*"; }; export -f big
-    log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log 
-    now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
-    sec() { date -u "+%s" ; }; export -f sec
-    zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
-    cmd() { command -v "$1" >/dev/null 2>&1 ; }; export -f cmd
-
+```sh
+out() { printf %s\\n "$*" ; }; export -f out
+err() { >&2 printf %s\\n "$*" ; }; export -f err
+die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
+big() { printf \\n###\\n#\\n#\ %s\\n#\\n###\\n\\n "$*"; }; export -f big
+log() { printf '%s %s %s\n' "$( now )" $$ "$*" ; }; export -f log 
+now() { date -u "+%Y-%m-%dT%H:%M:%S.%NZ" ; }; export -f now
+sec() { date -u "+%s" ; }; export -f sec
+zid() { hexdump -n 16 -v -e '16/1 "%02x" "\n"' /dev/random ; }; export -f zid
+cmd() { command -v "$1" >/dev/null 2>&1 ; }; export -f cmd
+```
 
 ## Caveat about now()
 

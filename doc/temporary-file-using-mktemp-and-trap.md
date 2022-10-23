@@ -2,7 +2,9 @@
 
 To create a temporary file:
 
-    file=$(mktemp)
+```sh
+file=$(mktemp)
+```
 
 Why use `mktemp` instead of `tempfile`? 
 
@@ -10,7 +12,9 @@ Why use `mktemp` instead of `tempfile`?
 
 To remove a temporary file when the program exist:
 
-    trap "rm -f $file" EXIT
+```sh
+trap "rm -f $file" EXIT
+```
 
 Why trap on EXIT, instead of TERM, INT, HUP? 
 

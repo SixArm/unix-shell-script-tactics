@@ -4,7 +4,9 @@ The `find` command can print error messages that say "Permission Denied".
 
 To filter out these errors and use a robust POSIX syntax:
 
-    { LC_ALL=C find . 3>&2 2>&1 1>&3 | grep -v 'Permission denied' >&3; [ $? -eq 1 ]; } 3>&2 2>&1
+```sh
+{ LC_ALL=C find . 3>&2 2>&1 1>&3 | grep -v 'Permission denied' >&3; [ $? -eq 1 ]; } 3>&2 2>&1
+```
 
 How it works:
 

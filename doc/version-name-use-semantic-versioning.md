@@ -6,13 +6,18 @@ The important aspect to our teams is that documenting the version name makes it 
 
 We prefer to create a function `version()` such as:
 
-    version() { printf %s "1.0.0"; }
+```sh
+version() { printf %s "1.0.0"; }
+```
 
 We work with some organizations that prefer to use a variable such as:
 
-    version="1.0.0"
+```sh
+version="1.0.0"
+```
 
 We work with some organizations that prefer to use a comment such as:
 
-    # version 1.0.0
-    
+```sh
+# version 1.0.0
+```    

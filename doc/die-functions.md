@@ -6,12 +6,16 @@ Our scripts may use this all-purpose function:
 
 Code:
 
-    die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
+```sh
+die() { >&2 printf %s\\n "$*" ; exit 1 ; }; export -f die
+```
 
 We sometimes use these functions too:
 
-    die_arg() { die "Argument: $*" ; }; export -f die_arg
-    die_cmd() { die "Command: $*" ; }; export -f die_cmd
-    die_dir() { die "Directory: $*" ; }; export -f die_dir
-    die_opt() { die "Option: $*" ; }; export -f die_opt
-    die_var() { die "Variable: $*" ; }; export -f die_var
+```sh
+die_arg() { die "Argument: $*" ; }; export -f die_arg
+die_cmd() { die "Command: $*" ; }; export -f die_cmd
+die_dir() { die "Directory: $*" ; }; export -f die_dir
+die_opt() { die "Option: $*" ; }; export -f die_opt
+die_var() { die "Variable: $*" ; }; export -f die_var
+```

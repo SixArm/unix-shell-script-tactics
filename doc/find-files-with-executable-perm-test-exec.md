@@ -2,12 +2,15 @@
 
 To find files that are executable by the user, using a POSIX compatible syntax:
 
-    find . -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \) -exec test -x {} \; -print
+```sh
+find . -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \) -exec test -x {} \; -print
+```
 
 To find files and run them:
 
-    find . -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \) -exec test -x {} \; -exec {} \;
-
+```sh
+find . -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \) -exec test -x {} \; -exec {} \;
+```
 
 ## Details
 

@@ -6,6 +6,7 @@ One example is when we want to use GNU parallel, and we want parallel to be able
 
 Example:
 
-    foo() { echo "hello"; }
-    export -f foo
-    
+```sh
+foo() { echo "hello"; }
+export -f foo
+```

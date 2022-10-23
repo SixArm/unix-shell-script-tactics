@@ -2,8 +2,10 @@
 
 Example:
 
-    case "$x" in
-      --) echo "a double dash terminates options" ;;
-      -*) echo "a single dash is an option" ;;
-      *) echo "anything else is an argument" ;;
-    esac
+```sh
+case "$x" in
+    --) echo "a double dash terminates options" ;;
+    -*) echo "a single dash is an option" ;;
+    *) echo "anything else is an argument" ;;
+esac
+```

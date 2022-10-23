@@ -4,45 +4,61 @@ When we use the `find` command, we want to handle paths with special characters,
 
 Simple find -exec with '\;'. This may be unwieldy if COMMAND is large. This creates a separate process per file.
 
-    find . -exec COMMAND... {} \;
+```sh
+find . -exec COMMAND... {} \;
+```
 
 Simple find -exec with '\+'. If COMMAND is able to take multiple files, this is faster.
 
-    find . -exec COMMAND... {} \+
+```sh
+find . -exec COMMAND... {} \+
+```
 
 Find items in the current directory that start with a space or end with a space:
 
-    find . -type d \( -regex '\./ .*' -o -regex '.* ' \) -exec echo "==={}===" \;
+```sh
+find . -type d \( -regex '\./ .*' -o -regex '.* ' \) -exec echo "==={}===" \;
+```
 
 Find and switch to each file's directory then execute a command from there:
 
-    find . -name '*.txt' -execdir /mycmd {} \;
+```sh
+find . -name '*.txt' -execdir /mycmd {} \;
+```
 
 Find using portable semicolon and portable null termination:
 
-    find . -exec printf %s\\0 '{}' \;
+```sh
+find . -exec printf %s\\0 '{}' \;
+```
 
 Find using portable semicolon and portable null termination, then a while loop:
 
-    find . -exec printf %s\\0 '{}' \; | while read -d $'\0' file; do ...
+```sh
+find . -exec printf %s\\0 '{}' \; | while read -d $'\0' file; do ...
+```
 
 Find items and run a shell script on each item. This works portably.  Use '\'' for single-quote in command. This runs a subshell, so variable values are lost after each iteration.
 
-    find . -exec sh -c '
-    for file do
-      ...  # Use "$file" not $file
-    done' sh {} +
+```sh
+find . -exec sh -c '
+for file do
+    ...  # Use "$file" not $file
+done' sh {} +
+```
 
 Credit: http://www.dwheeler.com/essays/filenames-in-shell.html
 
 Find files with leading and/or trailing spaces then fix them:
 
-    find . -maxdepth 1 \( -regex '\./ .*' -o -regex '.* ' \) -exec sh -c '
-    for src do
-      src=${src/#.\//}
-      dst="$src"
-      dst=${dst/# */}
-      dst=${dst/% */}
-      echo "==$src== ==$dst=="
-      mv --interactive "$src" "$dst"
-    done' sh {} +
+```sh
+find . -maxdepth 1 \( -regex '\./ .*' -o -regex '.* ' \) -exec sh -c '
+for src do
+    src=${src/#.\//}
+    dst="$src"
+    dst=${dst/# */}
+    dst=${dst/% */}
+    echo "==$src== ==$dst=="
+    mv --interactive "$src" "$dst"
+done' sh {} +
+```

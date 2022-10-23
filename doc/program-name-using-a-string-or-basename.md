@@ -6,10 +6,14 @@ Our convention: create a function `program()`.
 
 The function can return a string name such as:
 
-    program() { echo "our-demo-tool"; }
+```sh
+program() { echo "our-demo-tool"; }
+```
 
 If the program may use dynamic naming, then the function can calculate a name:
 
-    program(){ echo "$(basename "$0")"; }
+```sh
+program(){ echo "$(basename "$0")"; }
+```
 
 There may be a better way; if you know a better way, please let us know.

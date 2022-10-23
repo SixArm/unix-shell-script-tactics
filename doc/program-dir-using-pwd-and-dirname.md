@@ -4,7 +4,9 @@ We want a program to know it's own directory.
 
 Our convention: create a function `program_dir()`.
 
-    program_dir(){ cd $(dirname "${0}") > /dev/null; echo $(pwd -L); cd - > /dev/null;  }
+```sh
+program_dir(){ cd $(dirname "${0}") > /dev/null; echo $(pwd -L); cd - > /dev/null;  }
+```
 
 There may be a better way; if you know a better way, please let us know.
 
