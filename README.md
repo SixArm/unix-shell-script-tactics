@@ -1,6 +1,6 @@
-# SixArm.com → Shell style guide
+# SixArm.com Unix shell style guide
 
-SixArm is a software consultancy. Our clients use a wide range of shells and systems. This is our shell style guide that helps us write better shell scripts for speed, security, stability, and portability.
+SixArm is a software consultancy. Many of our clients use Unix shells. This is our style guide that helps us write better code for speed, security, stability, and portability.
 
 Highlights:
 
