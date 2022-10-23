@@ -1,6 +1,8 @@
 # Unix shell script style guide
 
-This Unix shell script style guide helps us write better Unix shell script code for speed, security, stability, and portability. This guide is by SixArm.com, a software consultancy.
+This Unix shell script style guide helps us write better Unix shell script code for speed, security, stability, and portability. 
+
+This guide is by SixArm.com, a software consultancy. Our customers use shell scripts within a wide variety of Unix shells, so we aim for POSIX for simple scripts.
 
 Highlights:
 
@@ -12,7 +14,7 @@ Highlights:
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
-  * [SixArm shell style guide demo script](doc/sixarm-shell-style-guide-demo.sh)
+  * [Demo](doc/demo.sh)
 
 Recommendations:
 
