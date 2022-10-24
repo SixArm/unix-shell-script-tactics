@@ -10,7 +10,8 @@ Highlights:
   * [Protect scripts by using "set" flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
   * [Trap signals and exit by using `trap "..." EXIT`](doc/trap-signals-and-exit.md)
   * [Use ShellCheck to find bugs](https://www.shellcheck.net)
-  * [Parse options via `while` and `case` not `getopts` or `getopt`](parse-options-via-while-and-case-not-getops-or-getopt)
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getops-or-getopt.md)
+* parse-options-via-while-and-case-not-getopts-or-getop.md
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document.md)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
@@ -37,7 +38,7 @@ Demo:
 Argumemt parsing:
 
   * [Arg parse](doc/arg-parse.md)
-  * [Parse options via `while` and `case` not `getopts` or `getopt`](parse-options-via-while-and-case-not-getops-or-getopt)
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)
 
 Environment variables:
 

@@ -1,4 +1,4 @@
-# Parse options with `while` and `case` not `getopts` or `getop`
+# Parse options via `while` and `case` not `getopts` or `getop`
 
 Unix shell scripts have a variety of ways to do options parsing such as:
 
@@ -92,20 +92,13 @@ die(){
 
 ## getops versus getop
 
-In practice there are significant differences between `getops` and `getop` and their various versions or various systems:
+In practice there are significant differences between `getopts` and `getop` and their various versions or various systems:
 
 * Parsing a long option. Example: "--help" means help.
 
 * Parsing an empty argument string. Example: "--foo=" should mean that the foo option is set to a blank string.
 
 * Which capabilities are available on a specific system. Example: some systems do not come with `getop`, and some systems have `getop` versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`).
-
-
-## zparseopts
-
-This is an approach that is specific to Z shell (zsh).
-
-When you have a specification that states the shell script will exclusively run on Z shell, then try `zparseopts`.
 
 
 ## getopts_long 
@@ -115,3 +108,10 @@ This is written as a POSIX shell function that we embed within a shell script.
 We recommend this approach 
 
 When you want the best capabilties for options parsing, and you do not want to change from a Unix shell script to a more-capable programming language, then try `getopts_long`.
+
+
+## zparseopts
+
+This is an approach that is specific to Z shell (zsh).
+
+When you have a specification that states the shell script will exclusively run on Z shell, then try `zparseopts`.
