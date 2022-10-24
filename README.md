@@ -11,7 +11,6 @@ Highlights:
   * [Trap signals and exit by using `trap "..." EXIT`](doc/trap-signals-and-exit.md)
   * [Use ShellCheck to find bugs](https://www.shellcheck.net)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getops-or-getopt.md)
-* parse-options-via-while-and-case-not-getopts-or-getop.md
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document.md)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
@@ -19,7 +18,7 @@ Highlights:
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
     
 
-Recommendations:
+Recommendations (details of these are TODO):
 
   * Quote liberally such as `"$var"` instead of just `$var`, for safety.
   * Bulletproof scripts to handle characters such as a quote, newline, leading dash.
