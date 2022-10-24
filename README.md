@@ -9,11 +9,14 @@ Highlights:
   * [Aim for POSIX when possible because of portability and standardization](doc/aim-for-posix.md)
   * [Protect scripts by using "set" flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
   * [Trap signals and exit by using `trap "..." EXIT`](doc/trap-signals-and-exit.md)
+  * [Use ShellCheck to find bugs](https://www.shellcheck.net)
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](parse-options-via-while-and-case-not-getops-or-getopt)
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document.md)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
+    
 
 Recommendations:
 
@@ -27,6 +30,9 @@ Recommendations:
 Demo:
 
   * [Unix shell script tactics demo](bin/unix-shell-script-tactics-demo)
+
+
+## Topics
 
 Argumemt parsing:
 
