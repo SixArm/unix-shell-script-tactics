@@ -89,6 +89,14 @@ die(){
 }
 ```
 
+## getops
+
+The POSIX `getopts` approach can be great for combining one-letter options, such as the classic `ps -aux`.
+
+Unfortunately POSIX `getopts` doesn't support long options, such as --help. This means a script can't use long options that are descriptive such as --dry-run, --danger, --minimum, --maximum, etc.
+
+For some teams, and some commands, the long options are worth the tradeoff because they improve readability, as well as flexibility when a programmer is creating a script's option names. For a majority of our use cases, we value the long options more highly than the short options combining letters, and we're willing to write the parsing ourselves.
+
 
 ## getops versus getop
 
