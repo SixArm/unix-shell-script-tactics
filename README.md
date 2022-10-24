@@ -9,14 +9,14 @@ Highlights:
   * [Aim for POSIX when possible because of portability and standardization](doc/aim-for-posix.md)
   * [Protect scripts by using "set" flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
   * [Trap signals and exit by using `trap trap_exit EXIT`](doc/trap-signals-and-exit.md)
-  * [Use ShellCheck to find bugs](https://www.shellcheck.net)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document.md)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
-    
+  * [Hunt for bugs by using ShellCheck](https://www.shellcheck.net)
+  * [Fix some bugs automatically, if you want, by using Shellharden](https://github.com/anordal/shellharden)    
 
 Recommendations (details of these are TODO):
 
