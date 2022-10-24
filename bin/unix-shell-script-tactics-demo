@@ -234,6 +234,7 @@ while :; do
         # Any other arguments are to be treated as content not options
         *)
             break
+            ;;
     esac
     shift
 done            

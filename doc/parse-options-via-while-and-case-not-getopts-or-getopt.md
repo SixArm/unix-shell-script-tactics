@@ -73,6 +73,7 @@ while :; do
         # Anything remaining is treated as content not a parseable option
         *)
             break
+            ;;
     esac
     shift
 done
@@ -109,7 +110,7 @@ In practice there are significant differences between `getopts` and `getopt` and
 * Different capabilities can happen depending on the specific system. Example: some systems do not come with `getop`, whereas some systems do come with `getop` yet there are different versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`.
 
 
-## getopts_long 
+## getopts_long
 
 This is written as a POSIX shell function that we embed within a shell script.
 
