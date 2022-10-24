@@ -1,4 +1,4 @@
-# Parse options via `while` and `case` not `getopts` or `getop`
+# Parse options via `while` and `case` not `getopts` or `getopt`
 
 Unix shell scripts have a variety of ways to do options parsing such as:
 
@@ -99,7 +99,7 @@ Unfortunately POSIX `getopts` doesn't support long options, such as --help. This
 For some teams, and some commands, the long options are worth the tradeoff because they improve readability, as well as flexibility when a programmer is creating a script's option names. For a majority of our use cases, we value the long options more highly than the short options combining letters, and we're willing to write the parsing ourselves.
 
 
-## getops versus getop
+## getops versus getopt
 
 In practice there are significant differences between `getopts` and `getopt` and their various versions on various systems:
 
@@ -107,7 +107,7 @@ In practice there are significant differences between `getopts` and `getopt` and
 
 * The `getopt` tool has had parsing issues when there is an empty argument string. Example: "--foo=bar" succeeds, whereas "--foo=" fails even though it could mean that foo should be set to a blank string.
 
-* Different capabilities can happen depending on the specific system. Example: some systems do not come with `getop`, whereas some systems do come with `getop` yet there are different versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`.
+* Different capabilities can happen depending on the specific system. Example: some systems do not come with `getopt`, whereas some systems do come with `getopt` yet there are different versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`.
 
 
 ## getopts_long
