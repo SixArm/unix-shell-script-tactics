@@ -3,7 +3,7 @@
 Unix shell scripts have a variety of ways to do options parsing such as:
 
 * `while` and `case` which you write yourself.
-* 
+
 * `getopts` is a POSIX standard. See <https://pubs.opengroup.org/onlinepubs/7908799/xcu/getopts.html>.
 
 * `getopts_long` is a POSIX script. See <http://stchaz.free.fr/getopts_long.sh>.
