@@ -29,6 +29,9 @@ Example:
 # Set verbose level to default 0 
 verbose=0
 
+# Set any options to defaults
+foo=""
+
 # Process all the command line options
 while :; do
     case $1 in
