@@ -23,8 +23,7 @@ Recommendations:
   * Use `printf` instead of `echo` because of security and stability.
   * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
   * Create temporary files by using `mktemp` instead of `tempfile` et. al.
-  * Parse options by using `while` and `case` instead of `getopts` or `getopt`.
-
+  
 Demo:
 
   * [Unix shell script tactics demo](bin/unix-shell-script-tactics-demo)
@@ -32,7 +31,8 @@ Demo:
 Argumemt parsing:
 
   * [Arg parse](doc/arg-parse.md)
-:
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](parse-options-via-while-and-case-not-getops-or-getopt)
+
 Environment variables:
 
   * [Test if set or unset](doc/environment-variables/test-if-set-or-unset.md)
