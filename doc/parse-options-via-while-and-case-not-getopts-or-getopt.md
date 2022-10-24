@@ -92,20 +92,18 @@ die(){
 
 ## getops versus getop
 
-In practice there are significant differences between `getopts` and `getop` and their various versions or various systems:
+In practice there are significant differences between `getopts` and `getopt` and their various versions on various systems:
 
-* Parsing a long option. Example: "--help" means help.
+* The `getopts` POSIX standard can parse a short option, but not a long option, whereas `getopt`can do both. Example: "-h" is a short option, and "--help" is a long option.
 
-* Parsing an empty argument string. Example: "--foo=" should mean that the foo option is set to a blank string.
+* The `getopt` tool has had parsing issues when there is an empty argument string. Example: "--foo=bar" succeeds, whereas "--foo=" fails even though it could mean that foo should be set to a blank string.
 
-* Which capabilities are available on a specific system. Example: some systems do not come with `getop`, and some systems have `getop` versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`).
+* Different capabilities can happen depending on the specific system. Example: some systems do not come with `getop`, whereas some systems do come with `getop` yet there are different versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`.
 
 
 ## getopts_long 
 
 This is written as a POSIX shell function that we embed within a shell script.
-
-We recommend this approach 
 
 When you want the best capabilties for options parsing, and you do not want to change from a Unix shell script to a more-capable programming language, then try `getopts_long`.
 
