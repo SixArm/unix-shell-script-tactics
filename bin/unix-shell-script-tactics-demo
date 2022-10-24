@@ -145,76 +145,95 @@ temp_dir() { out $(temp_home "$program_command"); };
 ## Assert helpers
 assert_empty() { [ -z "$1" ] || err $FUNCNAME "$@" ; }
 assert_equal() { [ "$1" = "$2" ] || err $FUNCNAME "$@" ; }
-assert_match() { [[ "$2" =~ $1 ]] || err $FUNCNAME "$@" ; }
 
 ## Verify a command executable, a script variable, and an env variable
 #CURL=${CURL:-curl}; cmd "$CURL" || die_cmd "$CURL"
 #foo="${1:-}"; [ -z "$foo" ] && die_var foo
 #[ -z ${BAR+x} ] && die_var BAR
 
-if [ "$#" -eq 1 ]; then
-  case "$1" in
-    -h|--help)
-      help; exit 0
-      ;;
-    -v|--version)
-      out "$program_version"; exit 0
-      ;;
-    --program-command)
-      out "$program_command"; exit 0
-      ;;
-    --program-version)
-      out "$program_version"; exit 0
-      ;;
-    --program-updated)
-      out "$program_version"; exit 0
-      ;;
-    --program-license)
-      out "$program_license"; exit 0
-      ;;
-    --program-website)
-      out "$program_website"; exit 0
-      ;;
-    --program-contact)
-      out "$program_contact"; exit 0
-      ;;
-    --log-dir)
-      out "$(log_dir)"; exit 0
-      ;;
-    --log-home)
-      out "$(log_home)"; exit 0
-      ;;
-    --data-dir)
-      out "$(data_dir)"; exit 0
-      ;;
-    --data-home)
-      out "$(data_home)"; exit 0
-      ;;
-    --cache-dir)
-      out "$(cache_dir)"; exit 0
-      ;;
-    --cache-home)
-      out "$(cache_home)"; exit 0
-      ;;
-    --config-dir)
-      out "$(config_home)"; exit 0
-      ;;
-    --config-home)
-      out "$(config_home)"; exit 0
-      ;;
-    --runtime-dir)
-      out "$(config_home)"; exit 0
-      ;;
-    --runtime-home)
-      out "$(config_home)"; exit 0
-      ;;
-    --temp-dir)
-      out "$(temp_dir)"; exit 0
-      ;;
-    --*=*)
-      key="${1#--}"; key="${key%%=*}";
-      val="${1#*=}";
-      eval "$key"=\$val
-      ;;
-  esac
-fi
+verbose=0
+while :; do
+    case $1 in
+        --)
+            shift
+            break
+            ;;
+        -h|--help)
+            help
+            ;;
+        -v|--verbose)
+            verbose=$((verbose + 1))
+            ;;
+        -V|--version)
+            out "$program_version"
+            ;;
+        --program-command)
+            out "$program_command"
+            ;;
+        --program-version)
+            out "$program_version"
+            ;;
+        --program-updated)
+            out "$program_version"
+            ;;
+        --program-license)
+            out "$program_license"
+            ;;
+        --program-website)
+            out "$program_website"
+            ;;
+        --program-contact)
+            out "$program_contact"
+            ;;
+        --log-dir)
+            out "$(log_dir)"
+            ;;
+        --log-home)
+            out "$(log_home)"
+            ;;
+        --data-dir)
+            out "$(data_dir)"
+            ;;
+        --data-home)
+            out "$(data_home)"
+            ;;
+        --cache-dir)
+            out "$(cache_dir)"
+            ;;
+        --cache-home)
+            out "$(cache_home)"
+            ;;
+        --config-dir)
+            out "$(config_home)"
+            ;;
+        --config-home)
+            out "$(config_home)"
+            ;;
+        --runtime-dir)
+            out "$(config_home)"
+            ;;
+        --runtime-home)
+            out "$(config_home)"
+            ;;
+        --temp-dir)
+            out "$(temp_dir)"
+            ;;
+        # Catch-all that enables arbitrary options such as key=val.
+        # Depending on your goals, you can use this section or not.
+        --*=*)
+            key="${1#--}"; key="${key%%=*}";
+            val="${1#*=}";
+            eval "$key"=\$val
+            ;;
+        # Catch-all for unexpected input that looks like an option.
+        # Depending on your goals, you can use this section or not.
+        -?*)
+            die "This looks like an option but is unknown: " "$1"
+            break
+            ;;
+        # Any other arguments are to be treated as content not options
+        *)
+            break
+    esac
+    shift
+done            

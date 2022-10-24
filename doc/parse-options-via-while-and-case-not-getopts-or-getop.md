@@ -1,0 +1,98 @@
+# Parse options with `while` and `case` not `getopts` or `getop`
+
+Unix shell scripts have a variety of ways to do options parsing such as:
+
+* `while` and `case` which are
+* 
+* `getopts` is a POSIX standard. See <https://pubs.opengroup.org/onlinepubs/7908799/xcu/getopts.html>.
+
+* `getopts_long` is a POSIX script. See <http://stchaz.free.fr/getopts_long.sh>.
+
+* `getopt` is a GNU tool. See <https://www.gnu.org/software/libc/manual/html_node/Getopt.html>.
+
+* `zparseopts` is a Z shell tool. See the man page `zshmodules(1)`.
+
+There are pros and cons to each.
+
+If you want simple parsing, then we recommend writing your own via `while` and `case`.
+
+If you want sophisticated parsing, then we recommend changing from a Unix shell script to a more-capable programming language.
+
+
+## `while` and `case`
+
+Use a `while` infinite loop that contains a `case` statement for all the command line options.
+
+Example:
+
+```sh
+# Set verbose level to default 0 
+verbose=0
+
+# Process all the command line options
+while :; do
+    case $1 in
+        # Two hyphens ends the options parsing
+        --)
+            shift
+            break
+            ;;
+        # Print help by calling a help() function that you define later
+        -h|--help)
+            help
+            exit
+            ;;
+        # Each verbose option is treated as incrementing the verbose level
+        -v|--verbose)
+            verbose=$((verbose + 1))
+            ;;
+        # Anything remaining that starts with a dash triggers a fatal error
+        -?*)
+            die "This looks like an option but is unknown: " "$1"
+            break
+            ;;
+        # Anything remaining is treated as content not a parseable option
+        *)
+            break
+    esac
+    shift
+done
+
+help(){
+cat << EOF
+    # add your help documentation here
+EOF
+}
+
+die(){
+    >&2 printf %s\\n "$*"
+    exit 1
+}
+```
+
+
+## getops versus getop
+
+In practice there are significant differences between `getops` and `getop` and their various versions or various systems:
+
+* Parsing a long option. Example: "--help" means help.
+
+* Parsing an empty argument string. Example: "--foo=" should mean that the foo option is set to a blank string.
+
+* Which capabilities are available on a specific system. Example: some systems do not come with `getop`, and some systems have `getop` versions with different capabilties due to use of different package sources such as `util-linux` versus `linux-utils`).
+
+
+## zparseopts
+
+This is an approach that is specific to Z shell (zsh).
+
+When you have a specification that states the shell script will exclusively run on Z shell, then try `zparseopts`.
+
+
+## getopts_long 
+
+This is written as a POSIX shell function that we embed within a shell script.
+
+We recommend this approach 
+
+When you want the best capabilties for options parsing, and you do not want to change from a Unix shell script to a more-capable programming language, then try `getopts_long`.
