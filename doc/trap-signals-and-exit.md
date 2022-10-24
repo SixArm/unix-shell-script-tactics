@@ -1,14 +1,14 @@
 # Trap signals and exit
 
-Trap signals, such as user pressing CTRL-C, and call an exit function.
+Trap signals, such as user pressing CTRL-C, and call an exiting function.
 
 ```sh
-exit() {
+exiting() {
   # Do any cleanup here, such as closing open files,
   # deleting temp data, or printing results.
 }
 
-trap exit EXIT
+trap exiting EXIT
 ```
 
 Use `trap "..." EXIT` instead of TERM, INT, HUP, etc.

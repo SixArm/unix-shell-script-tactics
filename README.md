@@ -8,7 +8,7 @@ Highlights:
 
   * [Aim for POSIX when possible because of portability and standardization](doc/aim-for-posix.md)
   * [Protect scripts by using "set" flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
-  * [Trap signals and exit by using `trap "..." EXIT`](doc/trap-signals-and-exit.md)
+  * [Trap signals and exit by using `trap exiting EXIT`](doc/trap-signals-and-exit.md)
   * [Use ShellCheck to find bugs](https://www.shellcheck.net)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
