@@ -224,12 +224,12 @@ while :; do
             key="${1#--}"; key="${key%%=*}";
             val="${1#*=}";
             eval "$key"=\$val
+            shift
             ;;
         # Catch-all for unexpected input that looks like an option.
         # Depending on your goals, you can use this section or not.
         -?*)
-            die "This looks like an option but is unknown: " "$1"
-            break
+            die "The command line option is unknown: " "$1"
             ;;
         # Any other arguments are to be treated as content not options
         *)

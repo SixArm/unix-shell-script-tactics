@@ -46,10 +46,26 @@ while :; do
         -v|--verbose)
             verbose=$((verbose + 1))
             ;;
+        # Parse an option value via this syntax: --foo bar
+        -f|--foo)
+            if [ -n "$2" ]; then
+                foo=$2
+                shift
+            else
+                die "The command option --foo requires a value"
+            fi
+            ;;
+        # Parse an option value via this syntax: --foo=bar
+        --foo=?*)
+            foo=${1#*=}
+            ;;
+        # Parse an option value via this syntax: --foo= (i.e. blank)
+        --foo=)
+            die "The command option --foo requires a value"
+            ;;            
         # Anything remaining that starts with a dash triggers a fatal error
         -?*)
-            die "This looks like an option but is unknown: " "$1"
-            break
+            die "The command line option is unknown: " "$1"
             ;;
         # Anything remaining is treated as content not a parseable option
         *)
