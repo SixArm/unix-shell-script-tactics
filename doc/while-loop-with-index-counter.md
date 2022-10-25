@@ -9,7 +9,7 @@ i=0
 max=3
 while [ "$i" -le "$max" ]; do
     echo "output: $i"
-    true $((i=i+1)
+    true $((i=i+1))
 done
 ```
 
