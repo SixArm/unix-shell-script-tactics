@@ -1,4 +1,4 @@
-# Unix shell script tactics - a style guide
+# Unix shell script tactics - best practices style guide
 
 This Unix shell script style guide helps us write better Unix shell script code for speed, security, stability, and portability. 
 
