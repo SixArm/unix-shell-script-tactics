@@ -7,7 +7,7 @@ This guide is by SixArm.com, a software consultancy. Our customers use shell scr
 Highlights:
 
   * [Aim for POSIX when possible because of portability and standardization](doc/aim-for-posix.md)
-  * [Protect scripts by using "set" flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
+  * [Protect scripts by using `set` flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
   * [Print output with `printf` not `echo`](doc/print-output-with-printf-not-echo.md)
   * [Trap signals and exit by using `trap trap_exit EXIT`](doc/trap-signals-and-exit.md)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)

@@ -1,4 +1,4 @@
-# Protect scripts by using "set" flags
+# Protect scripts by using `set` flags
 
 For POSIX scripts, please start with:
 
