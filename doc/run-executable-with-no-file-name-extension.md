@@ -1,23 +1,26 @@
-# Executables omit file name extensions
+# Run executable with no file name extension
 
-Executables omit file name extensions, such as `.sh` or `.bash` or `.zsh`.
-
-This is beacuse it's unnecessary and easy to get wrong. For example, we have some customers with scripts that show the extension `.sh` yet the scripts require functionality of `bash`.
+Run executable with no file name extension.
 
 Yes:
 
 ```
-foo
+$ foo
 ```
 
 No:
 
 ```
-foo.sh
-foo.bash
-foo.zsh
+$ foo.sh
+$ foo.bash
+$ foo.zsh
 …
 ```
+
+Executables should omit file name extensions, such as `.sh` or `.bash` or `.zsh`.
+
+This is because an executable file name extension is unnecessary, and also easy accidentally set incorrectly. For example, we have some customers with scripts that show the extension `.sh` yet the scripts require functionality of `bash`.
+
 
 
 ## Shebang
