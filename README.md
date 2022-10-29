@@ -8,6 +8,7 @@ Highlights:
 
   * [Aim for POSIX when possible because of portability and standardization](doc/aim-for-posix.md)
   * [Protect scripts by using "set" flags such as `set -euf`](doc/protect-scripts-by-using-set-flags.md)
+  * [Print output with `printf` not `echo`](doc/print-output-with-printf-not-echo.md)
   * [Trap signals and exit by using `trap trap_exit EXIT`](doc/trap-signals-and-exit.md)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
@@ -23,7 +24,6 @@ Recommendations (details of these are TODO):
   * Quote liberally such as `"$var"` instead of just `$var`, for safety.
   * Bulletproof scripts to handle characters such as a quote, newline, leading dash.
   * Executables should have no extension (strongly preferred).
-  * Use `printf` instead of `echo` because of security and stability.
   * Enable a user to customize commands by using env vars such as `${FOO:-foo}`.
   * Create temporary files by using `mktemp` instead of `tempfile` et. al.
   
