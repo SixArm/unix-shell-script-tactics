@@ -18,11 +18,10 @@ Highlights:
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601.md)
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
-  * [`readlink` on macOS behaves differently](doc/readlink-on-macos-behaves-differently.md)
   * [Hunt for bugs by using ShellCheck](https://www.shellcheck.net)
   * [Fix some bugs automatically, if you want, by using Shellharden](https://github.com/anordal/shellharden)    
 
-
+ 
 Recommendations (details of these are TODO):
 
   * Quote liberally such as `"$var"` instead of just `$var`, for safety.
@@ -95,6 +94,11 @@ Functions:
   * [Number functions](doc/number-functions.md)
   * [Array functions](doc/array-functions.md)
   * [URL encode and URL decode](doc/url-encode-and-url-decode.md)
+
+Compatibilities:
+
+  * [`readlink` on macOS behaves differently](doc/readlink-on-macos-behaves-differently.md)
+  * [`realpath` is` not available on macOS default](doc/realpath-is-not-available-on-macos-default.md)
 
 PostgreSQL psql:
 
