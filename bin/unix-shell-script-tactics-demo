@@ -91,9 +91,6 @@ Example:
   * --program-contact:
       print the program contact information for the maintainer
 
-  * --program-website:
-      print the program website URL
-
 ## Tracking
 
   * Command: $program_command
