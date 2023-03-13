@@ -174,7 +174,7 @@ while :; do
             out "$program_version"
             ;;
         --program-updated)
-            out "$program_version"
+            out "$program_updated"
             ;;
         --program-license)
             out "$program_license"
