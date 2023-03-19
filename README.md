@@ -95,6 +95,10 @@ Functions:
   * [Array functions](doc/array-functions.md)
   * [URL encode and URL decode](doc/url-encode-and-url-decode.md)
 
+Command snippets:
+
+  * [awk match_between](doc/awk-match-between.md)
+  
 Compatibilities:
 
   * [`readlink` on macOS behaves differently](doc/readlink-on-macos-behaves-differently.md)
