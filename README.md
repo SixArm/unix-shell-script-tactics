@@ -12,6 +12,7 @@ Highlights:
   * [Trap signals and exit by using `trap trap_exit EXIT`](doc/trap-signals-and-exit.md)
   * [Run executable with no file name extension](doc/run-executable-with-no-file-name-extension.md)
   * [Source with dot operator `.` not keyword `source`](doc/source-with-dot-operator-not-keyword-source.md)
+  * [for arg do loop](doc/for-arg-do-loop.md)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning.md)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document.md)
@@ -19,7 +20,7 @@ Highlights:
   * [Booleans: use true and false](doc/booleans-use-true-and-false.md)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks.md)
   * [Hunt for bugs by using ShellCheck](https://www.shellcheck.net)
-  * [Fix some bugs automatically, if you want, by using Shellharden](https://github.com/anordal/shellharden)    
+  * [Fix some bugs automatically, if you want, by using Shellharden](https://github.com/anordal/shellharden)
 
  
 Recommendations (details of these are TODO):
