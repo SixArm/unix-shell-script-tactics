@@ -2,23 +2,31 @@
 
 Argument parsing using a loop in order to find each relevant argument, and remove it from the array.
 
+See related:
+
+  * [for arg do loop](doc/for-arg-do-loop.md)
+
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt.md)
+
 ```sh
-for arg; do
+for arg
+do
     shift
     case $arg in
 	--[[:alnum:]][-_[:alnum:]]*)
-	    key="${arg#--}"
+		key="$( printf %s "$arg" | sed 's/^--//; s/[^-_[:alnum:]].*$//' )"
+		var="$( printf %s "$key" | sed 's/-/_/g' | tr '[:lower:]' '[:upper:]' )"
 	    case $arg in
-		*=*)
-		    key="${key%%=*}"
-		    value="${arg#*=}";
+		--"$key"=)
+		    eval "$var"="${arg#*=}"
+		    ;;
+		--"$key")
+		    eval "$var"=1
 		    ;;
 		*)
-		    value=1
-		    ;;
+			>&2 printf %s\\n "arg: $arg"
+			;;
 	    esac
-	    key="${key//-/_}"
-	    eval "$key"=\$value
 	    ;;
 	*)
 	    set -- "$@" "$arg"
@@ -30,6 +38,6 @@ done
 
 ## Notes
 
-The code `for arg do` is shorthand for `for arg in "$@"; do`.
+The code `for arg` is shorthand for `for arg in "$@"`.
 
-The code `value=1` is how shell arithmetic represents "true".
+The code that sets key to value 1 is because the number 1 is how shell arithmetic represents "true".

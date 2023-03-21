@@ -7,7 +7,7 @@ To loop over positional arguments, use:
 ```sh
 for arg
 do
-  echo "$arg"
+  printf %s\\n "$arg"
 done
 ```
 
@@ -16,7 +16,7 @@ DANGER: You must not leave the do on the same line as for, such as in the exampl
 ```sh
 # DANGER
 for arg; do
-  echo "$arg"
+  printf %s\\n "$arg"
 done
 ```
 
@@ -25,6 +25,6 @@ DANGER: If you want to explicitly refer to the positional arguments, given the `
 ```sh
 # DANGER
 for arg in ${1+"$@"}; do
-  echo "$arg"
+  printf %s\\n "$arg"
 done
 ```
