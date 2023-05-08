@@ -98,8 +98,9 @@ If a script is intended for the public, and we want it to be professional, then 
 ```sh
 program_command="my-foo-script"
 program_version="1.0.0"
+program_created="2016-01-01"
 program_updated="2016-01-11"
-program_license="GPL"
+program_license="GPL-2.0 or GPL-3.0"
 program_website="https://example.com"
 program_contact="Alice Adams (alice@example.com)"
 
@@ -111,6 +112,7 @@ cat << EOF
 
     * Command: $program_command
     * Version: $program_version
+    * Created: $program_created
     * Updated: $program_updated
     * License: $program_license
     * Website: $program_website
