@@ -89,36 +89,36 @@ while :; do
             break
             ;;
         -h|--help)
-            help
+            help; exit 0;
             ;;
         -v|--verbose)
             verbose=$((verbose + 1))
             ;;
         -V|--version)
-            out "$program_version"
+            out "$program_version"; exit 0;
             ;;
         # Options that print program information variables.
         # These variables are all set at the top of the script.
         --program-command)
-            out "$program_command"
+            out "$program_command"; exit 0;
             ;;
         --program-version)
-            out "$program_version"
+            out "$program_version"; exit 0;
             ;;
         --program-created)
-            out "$program_created"
+            out "$program_created"; exit 0;
             ;;
         --program-updated)
-            out "$program_updated"
+            out "$program_updated"; exit 0;
             ;;
         --program-license)
-            out "$program_license"
+            out "$program_license"; exit 0;
             ;;
         --program-website)
-            out "$program_website"
+            out "$program_website"; exit 0;
             ;;
         --program-contact)
-            out "$program_contact"
+            out "$program_contact"; exit 0;
             ;;
         # Catch-all that enables arbitrary options such as key=val.
         # Depending on your goals, you can use this section or not.
