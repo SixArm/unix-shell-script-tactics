@@ -95,7 +95,8 @@ Functions:
   * [Export function](doc/export-function)
   * [Number functions](doc/number-functions)
   * [Array functions](doc/array-functions)
-  * [URL encode and URL decode](doc/url-encode-and-url-decode)
+  * [URL encode](doc/url-encode)
+  * [URL decode](doc/url-decode)
 
 Command snippets:
 
