@@ -1,4 +1,4 @@
-# Program dir using pwd and dirname
+# Program directory using pwd and dirname
 
 We want a program to be able to discover its own directory.
 
@@ -6,10 +6,16 @@ Our convention: create a function `program_dir()`.
 
 ```sh
 program_dir(){ 
-        cd $(dirname "${0}") > /dev/null
-        echo $(pwd -L)
+        cd "$(dirname "${0}")" > /dev/null
+        pwd -L
         cd - > /dev/null
 }
+```
+
+If you prefer one line:
+
+```sh
+PROGRAM_DIR=$(cd "$(dirname "${0}")" > /dev/null; pwd -L; cd - > /dev/null);
 ```
 
 There may be a better way; if you know a better way, please let us know.
