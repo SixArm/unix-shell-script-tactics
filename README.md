@@ -80,6 +80,7 @@ Conventions:
 
   * [Program name using a string or basename](doc/program-name-using-a-string-or-basename)
   * [Program directory using pwd and dirname](doc/program-directory-using-pwd-andr-basename)
+  * [Git top level directory using rev-parse](doc/git-top-level-directory-using-rev-parse)
   * [Functions: out, err, die, big, log, now, sec, zid, cmd, etc.](doc/functions-out-err-die-big-log-now-sec-zid-cmd-etc)
   * [Assert functions: assert_empty, assert_equal, assert_match](doc/assert-functions)
   * [sec() function portability](doc/sec-function-portability)
