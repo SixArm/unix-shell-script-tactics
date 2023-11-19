@@ -71,13 +71,12 @@ Functions:
 Command snippets:
 
   * [awk match_between](doc/awk-match-between)
-  
+
 Compatibilities:
 
   * [`readlink` on macOS behaves differently](doc/readlink-on-macos-behaves-differently)
-  * [`realpath` is` not available on macOS default](doc/realpath-is-not-available-on-macos-default)
+  * [`realpath` is not available on macOS default](doc/realpath-is-not-available-on-macos-default)
 
 PostgreSQL psql:
 
   * [psql helpers](doc/psql-helpers)
-  
