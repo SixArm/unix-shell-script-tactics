@@ -1,6 +1,6 @@
 # Unix shell script tactics - best practices style guide
 
-This Unix shell script style guide helps us write better Unix shell script code for speed, security, stability, and portability. 
+This Unix shell script style guide helps us write better Unix shell script code for speed, security, stability, and portability.
 
 This guide is by SixArm.com, a software consultancy. Our customers use shell scripts within a wide variety of Unix shells, so we aim for POSIX for simple scripts.
 
@@ -23,7 +23,7 @@ Highlights:
   * [Hunt for bugs by using ShellCheck](https://www.shellcheck.net)
   * [Fix some bugs automatically, if you want, by using Shellharden](https://github.com/anordal/shellharden)
 
- 
+
 Recommendations (details of these are TODO):
 
   * Quote liberally such as `"$var"` instead of just `$var`, for safety.
@@ -102,13 +102,12 @@ Functions:
 Command snippets:
 
   * [awk match_between](doc/awk-match-between)
-  
+
 Compatibilities:
 
   * [`readlink` on macOS behaves differently](doc/readlink-on-macos-behaves-differently)
-  * [`realpath` is` not available on macOS default](doc/realpath-is-not-available-on-macos-default)
+  * [`realpath` is not available on macOS default](doc/realpath-is-not-available-on-macos-default)
 
 PostgreSQL psql:
 
   * [psql helpers](doc/psql-helpers)
-  
