@@ -50,7 +50,7 @@ Environment variables:
 
 Directories:
 
-  * [Script directory](doc/directories/script-directory)
+  * [Script directory: use dirname and realpath](doc/directories/script-directory-use-dirname-and-realpath)
   * [Log directory: use $LOG_HOME](doc/directories/cache-directory-use-log-home)
   * [Data directory: use $XDG_DATA_HOME](doc/directories/data-directory-use-xdg-data-home)
   * [Cache directory: use $XDG_CACHE_HOME](doc/directories/cache-directory-use-xdg-cache-home)
@@ -79,7 +79,6 @@ References:
 Conventions:
 
   * [Program name using a string or basename](doc/program-name-using-a-string-or-basename)
-  * [Program directory using pwd and dirname](doc/program-directory-using-pwd-andr-basename)
   * [Git top level directory using rev-parse](doc/git-top-level-directory-using-rev-parse)
   * [Functions: out, err, die, big, log, now, sec, zid, cmd, etc.](doc/functions-out-err-die-big-log-now-sec-zid-cmd-etc)
   * [Assert functions: assert_empty, assert_equal, assert_match](doc/assert-functions)
@@ -106,7 +105,7 @@ Command snippets:
 Compatibilities:
 
   * [`readlink` on macOS behaves differently](doc/readlink-on-macos-behaves-differently)
-  * [`realpath` is not available on macOS default](doc/realpath-is-not-available-on-macos-default)
+  * [`realpath` is` not available on older macOS default](doc/realpath-is-not-available-on-older-macos-default)
 
 PostgreSQL psql:
 
