@@ -1,3 +1,3 @@
-# `realpath` is not available on macOS default
+# `realpath` is not available on older macOS default
 
-The `realpath` is not available on macOS default.
+The command `realpath` is not available on older macOS versions by default.
