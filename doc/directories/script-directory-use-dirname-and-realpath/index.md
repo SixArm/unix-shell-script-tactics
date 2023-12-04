@@ -3,7 +3,7 @@
 To get a script's own directory, we recommend two options:
 
 ```sh
-command -v realpath || printf realpath 1>&2 && exit 69
+command -v realpath >/dev/null 2>&1 || printf realpath\\n 1>&2 && exit 69
 dir=$(dirname "$(realpath "$0")")
 
 dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
@@ -17,7 +17,7 @@ Details below.
 Code:
 
 ```sh
-command -v realpath || printf "realpath" 1>&2 && exit 69
+command -v realpath >/dev/null 2>&1 || printf realpath\\n 1>&2 && exit 69
 dir=$(dirname "$(realpath "$0")")
 ```
 
@@ -68,6 +68,21 @@ The `CDPATH=` is set to a null string so as to ensure that `cd`` never echoes an
 The `pwd -P` option is used to print the path with all symlinks resolved. This
 resolves the resulting directory path to its ultimate target in case the
 directory and/or its components are symlinks,
+
+
+## Option 3: combination
+
+Code:
+
+```sh
+if command -v realpath >/dev/null 2>&1; then
+    dir=$(dirname "$(realpath "$0")")
+else
+    dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+```
+
+The combination technique tries the realpath technique, and falls back to the cd technique.
 
 
 ## Comparisons
