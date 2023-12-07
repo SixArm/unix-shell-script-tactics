@@ -50,7 +50,7 @@ Environment variables:
 
 Directories:
 
-  * [Script directory: use dirname and realpath](doc/directories/script-directory-use-dirname-and-realpath)
+  * [Script directory: use realpath or cd](doc/directories/script-directory-use-realpath-or-cd)
   * [Log directory: use $LOG_HOME](doc/directories/cache-directory-use-log-home)
   * [Data directory: use $XDG_DATA_HOME](doc/directories/data-directory-use-xdg-data-home)
   * [Cache directory: use $XDG_CACHE_HOME](doc/directories/cache-directory-use-xdg-cache-home)

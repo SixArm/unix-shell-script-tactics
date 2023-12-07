@@ -1,15 +1,10 @@
-# Script directory: use dirname and realpath
+# Script directory: use realpath or cd
 
-To get a script's own directory, we recommend two options:
+To get a script's own directory, we recommend two options: 
 
-```sh
-command -v realpath >/dev/null 2>&1 || printf realpath\\n 1>&2 && exit 69
-dir=$(dirname "$(realpath "$0")")
+* Option 1: `realpath` is more capable but not POSIX yet.
 
-dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
-```
-
-Details below.
+* Option 2: `cd` is POSIX yet less capable.
 
 
 ## Option 1: realpath is more capable but not POSIX yet
@@ -70,9 +65,9 @@ resolves the resulting directory path to its ultimate target in case the
 directory and/or its components are symlinks,
 
 
-## Option 3: combination
+## How to use both realpath and cd
 
-Code:
+This code uses realpath if it's available, otherwise falls back to use cd:
 
 ```sh
 if command -v realpath >/dev/null 2>&1; then
@@ -82,7 +77,6 @@ else
 fi
 ```
 
-The combination technique tries the realpath technique, and falls back to the cd technique.
 
 
 ## Comparisons
