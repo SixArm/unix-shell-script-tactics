@@ -41,7 +41,7 @@ Demo:
 Argument parsing:
 
   * [Arg parse](doc/arg-parse)
-  * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt)
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-case-not-getopts-or-getopt)
 
 Environment variables:
 

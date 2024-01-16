@@ -6,7 +6,7 @@ See related:
 
   * [for arg do loop](../for-arg-do-loop)
 
-  * [Parse options via `while` and `case` not `getopts` or `getopt`](../parse-options-via-while-and-case-not-getopts-or-getopt)
+  * [Parse options via `while` and `case` not `getopts` or `getopt`](../parse-options-via-while-case-not-getopts-or-getopt)
 
 ```sh
 for arg
