@@ -13,8 +13,6 @@ Highlights:
   * [Use a `main()` function](doc/use-a-main-function/)
   * [Run executable with no file name extension](doc/run-executable-with-no-file-name-extension/)
   * [Source with dot operator `.` not keyword `source`](doc/source-with-dot-operator-not-keyword-source/)
-  * [for arg do loop](doc/for-arg-do-loop/)
-  * [Parse options via `while…case` not `getopts/getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt/)
   * [Version name: use semantic versioning](doc/version-name-use-semantic-versioning/)
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document/)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601/)
@@ -41,6 +39,7 @@ Demo:
 
 Argument parsing:
 
+  * [for arg do loop](doc/for-arg-do-loop/)
   * [Arg parse](doc/arg-parse/)
   * [Parse options via `while` and `case` not `getopts` or `getopt`](doc/parse-options-via-while-and-case-not-getopts-or-getopt/)
 

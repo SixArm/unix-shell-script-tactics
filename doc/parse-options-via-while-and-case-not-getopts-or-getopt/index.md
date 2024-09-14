@@ -1,4 +1,4 @@
-# Parse options via `while…case` not `getopts/getopt`
+# Parse options via `while` and `case` not `getopts` or `getopt`
 
 Unix shell scripts have a variety of ways to do options parsing such as:
 
