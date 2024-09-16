@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
+if [ -t 1 ] && [ -z "${NO_COLOR:-}" ] && [ "${TERM:-}" != "dumb" ]; then
     COLOR_RESET='[0m'
     COLOR_FG_BLACK='[30m'
     COLOR_FG_RED='[31m'
