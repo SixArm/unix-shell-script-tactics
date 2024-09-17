@@ -17,9 +17,9 @@ Highlights:
   * [Help: use a function and HERE document](doc/help-use-a-function-and-here-document/)
   * [Date &amp; time format: use UTC and ISO8601](doc/date-time-format-use-utc-and-iso8601/)
   * [Booleans: use true and false](doc/booleans-use-true-and-false/)
+  * [Colors: use terminal escape codes & NO_COLOR & TERM=dumb](doc/colors-use-terminal-escape-codes-and-no-color-and-term-dumb/)
   * [Subshells: use parentheses `$()` not backticks](doc/subshells-use-parentheses-not-backticks/)
   * [Trace using set -x then set +x without printing](doc/trace-using-set-x-then-set-x-without-printing/)
-  * [Use color with terminal escape codes and NO_COLOR](doc/use-color-with-terminal-escape-codes-and-no-color/)
   * [Hunt for bugs by using ShellCheck](https://www.shellcheck.net/)
   * [Fix some bugs automatically, if you want, by using Shellharden](https://github.com/anordal/shellharden/)
 

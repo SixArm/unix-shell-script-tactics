@@ -1,12 +1,14 @@
-# Use color with terminal escape codes and NO_COLOR
+# Colors: use terminal escape codes & NO_COLOR & TERM=dumb
 
-Color output can be set in a variety of ways.
+Colors in output can be set in a variety of ways.
 
 See the [color.sh](color.sh) script in this directory.
 
 We prefer this implementation:
 
-* Use POSIX shell color escape strings. Do not use "tput setaf" to set foreground color, or "tput setab" to set background color, or "tput sgr0" to reset color. This is because tput colors are not POSIX, and also tput tends to be slow.
+* Use POSIX shell colors. Do not use non-POSIX shell colors. 
+
+* Implement colors with POSIX escape strings. Do not "tput setaf" to set foreground color, or "tput setab" to set background color, or "tput sgr0" to reset color. This is because tput colors are not POSIX, and also tput tends to be slow.
 
 * Use an embedded actual escape character. Do not use dollar quoting such as `$'\e'`. This is because dollar quoting is not POSIX.
 
